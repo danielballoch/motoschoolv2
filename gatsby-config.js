@@ -7,7 +7,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `motoschoolv2`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.motoschool.co.nz`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
