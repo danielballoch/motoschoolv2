@@ -244,7 +244,7 @@ const Booking = () => {
                         <p>This could be a focused one-on-one or bring your friends for a shared ride! </p>
                         <p>Either way we have a variety or tracks/obstacles and would love to help get you ready for your next comp or just have fun learning new skills and blasting around the tracks.</p>
                         <div className="add-ons-section">
-                            <div className="info"><StaticImage className="icon" src="../../images/icons/helmet-icon.png"/><li>Recommend max of 4 riders.</li></div>
+                            <div className="info"><StaticImage className="icon" src="../../images/icons/helmet-icon.png"/><li>Recommend 1-6 riders.</li></div>
                         </div>
                         <h3>$100 Per Hour</h3>
                     </div>

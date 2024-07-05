@@ -1,13 +1,15 @@
 import React from "react"
 import styled from "@emotion/styled"
-import HeroVideo from "../../images/HeroVideo.mp4"
+import HeroVideo from "../../images/VideoTest3.webm"
 import RippleButton from "../ripple-btn"
+import background from "../../images/hero.jpeg"
 
 const Wrapper = styled.div`
-min-height: 100vh;
+min-height: 115vh;
 height: auto;
 width: 100%;
-background-color: black;
+background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url(${background});
+// background-color: black;
 h1 {
 padding-top: 100px;
 line-height: 90%;
@@ -31,6 +33,7 @@ justify-content: center;
 // align-items: center;
 .hero-left {
     margin-top: 0px;
+    margin-bottom: 15vh;
     overflow-x: visible;
     z-index:100;
     display: flex;
@@ -96,7 +99,7 @@ const Hero = () => {
         </div>
         <div className="hero-right">
         <video loop autoPlay muted>
-            <source src={HeroVideo} type="video/mp4"/>
+            <source src={HeroVideo} type="video/webm"/>
         </video>
         </div>
       

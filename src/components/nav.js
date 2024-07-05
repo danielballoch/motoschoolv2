@@ -65,7 +65,7 @@ z-index: 500;
         a {
             width: 260px;
             margin: auto;
-            background-color: black;
+            // background-color: black;
             color: white;
             padding: 15px;
             // width: 100%;
