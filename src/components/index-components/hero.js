@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import HeroVideo from "../../images/VideoTest3.webm"
+import HeroVideo from "../../images/TestVideo1080.webm"
 import RippleButton from "../ripple-btn"
 import background from "../../images/hero.jpeg"
 
