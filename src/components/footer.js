@@ -220,7 +220,7 @@ export default function Nav(){
                 <div className="bottom-footer">
                     <Link to="/">© 2024 MOTOSCHOOL. All rights reserved.</Link>
                     <Link to="/terms-and-conditions">Privacy Policy</Link>
-                    <Link to="https://www.thoughtfulhq.com">Website by thoughtfulHQ</Link>
+                    <a to="https://www.thoughtfulhq.com">Website by thoughtfulHQ</a>
                 </div>
             </div>
         </Wrapper>

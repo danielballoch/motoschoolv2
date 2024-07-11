@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "@emotion/styled"
 import HeroVideo from "../../images/TestVideo1080.webm"
 import RippleButton from "../ripple-btn"
 import background from "../../images/hero.jpeg"
+import { ShareContext, ShareContextProvider } from "../context"
 
 const Wrapper = styled.div`
 min-height: 115vh;
@@ -56,15 +57,6 @@ justify-content: center;
     wrap: no-wrap;
     }
     a {
-    box-sizing: border-box;
-    white-space: nowrap;
-    border: solid 2px white;
-    display: inline-block;
-    // height: 30px;
-    padding: 20px 20px;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
     :first-of-type {
     margin-right: 40px;
     }
@@ -84,6 +76,9 @@ video {
 
 
 const Hero = () => {
+  const SContext = useContext(ShareContext);
+  console.log("hero", SContext.Value[1])
+
   return (
     <Wrapper>
         <div className="hero-left">
@@ -93,8 +88,8 @@ const Hero = () => {
         <div className="button-div">
             {/* <a href="#">MEET COACH PHIL</a>
             <a href="#">VIEW BOOKING OPTIONS</a> */}
-            <RippleButton text={"MEET COACH PHIL"}/>
-            <RippleButton text={"VIEW BOOKING OPTIONS"}/>
+            <a onClick={() => SContext.Value[1].current.scrollTo(".coach-video-wrap")}><RippleButton text={"MEET COACH PHIL"} /></a>
+            <a onClick={() => SContext.Value[1].current.scrollTo(".booking-options")}><RippleButton text={"VIEW BOOKING OPTIONS"}/></a>
         </div>
         </div>
         <div className="hero-right">

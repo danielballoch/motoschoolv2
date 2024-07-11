@@ -73,12 +73,12 @@ transform: rotate(180deg);
 
 .lessons {
 display: flex;
-justify-content: space-between;
+justify-content: center;
 flex-wrap: wrap;
 margin-top: 40px;
 }
 .card {
-width: 48%;
+width: 40%;
 // height: 508px;
 height: auto;
 border: 1px solid rgba(0,0,0,0.2);

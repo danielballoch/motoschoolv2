@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useState, useRef, createContext, useContext } from "react"
 import Navbar from "./nav"
 import Footer from "./footer"
 import gsap from 'gsap'
@@ -6,6 +6,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import styled from "@emotion/styled"
+import { ShareContextProvider } from "../components/context"
 
 const Wrapper = styled.div`
 #smooth-wrapper {
@@ -17,8 +18,10 @@ const Wrapper = styled.div`
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
-export default function Layout({children}){
+export const PageContext = createContext(null)
 
+export default function Layout({children}){
+  const [scrollPosition, setScrollPosition] = useState()
   const main = useRef();
   const smoother = useRef();
 
@@ -28,6 +31,10 @@ export default function Layout({children}){
       smoother.current = ScrollSmoother.create({
         smooth: 2, 
         effects: false, 
+        onUpdate: (self) => {
+          setScrollPosition(self.scrollTop())
+          // console.log("gsap self:", self.scrollTop())
+        }
       });
     },
     { scope: main }
@@ -40,8 +47,10 @@ export default function Layout({children}){
     <div id="smooth-wrapper" ref={main}>
       <div id="smooth-content">
         {/* <Navbar smoother={smoother}/> */}
-        <Navbar/>
-        <main>{children}</main>
+        <Navbar smoother={smoother}/>
+        <ShareContextProvider Value={[scrollPosition, smoother]}>
+          <main>{children}</main>
+        </ShareContextProvider>
         <Footer/>
       </div>
     </div>

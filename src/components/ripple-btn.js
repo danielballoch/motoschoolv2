@@ -3,11 +3,11 @@ import styled from "@emotion/styled"
 
 const Wrap = styled.div`
 width: fit-content;
-a {
+.button {
 display: flex;
 justify-items; center;
 align-items: center;
-// width: 250px;
+
 }
 .ripple-text {
 font-size: 16px!important;
@@ -20,6 +20,7 @@ position: relative;
 color: white!important;
 }
 .ripple {
+	padding: 20px!important;
 	background: rgba(0,0,0,0);
 	color: #fff;
 	padding: 0;
@@ -27,6 +28,7 @@ color: white!important;
 	overflow: hidden;
     border: solid 3px white;
     border-radius: 10px;
+	
 }
 
 .ripple::before {
@@ -73,7 +75,7 @@ color: white!important;
 export default function RippleButton({text}){
 return (
     <Wrap>
-        <a className="ripple"><p className="ripple-text">{text}</p></a>
+        <div className="button ripple"><p className="ripple-text">{text}</p></div>
     </Wrap>
 
 )

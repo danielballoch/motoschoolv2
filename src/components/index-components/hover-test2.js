@@ -1,7 +1,9 @@
-import React, { useRef } from "react"
+import React, { useContext, useEffect, useRef, useState } from "react"
 import styled from "@emotion/styled"
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { ShareContext, ShareContextProvider } from "../context"
+
 
 const Wrapper = styled.div`
 .container {
@@ -28,21 +30,31 @@ const Wrapper = styled.div`
 
 export default function HoverTest(){
     gsap.registerPlugin(useGSAP);
-
     const container = useRef();
-   
+    const SContext = useContext(ShareContext);
+    const [addY, setAddY] = useState(SContext)
+    // console.log("hover test: ", SContext)
+    // const ScrollPostion = useUserContext()
+
+    useEffect(()=>{
+       if(addY === 0 || addY !== SContext.Value){setAddY(SContext.Value)} 
+       console.log("Hover State: ", addY, "Context: ", SContext )
+    })
 
     useGSAP(
         () => {
             gsap.set('.container img.swipeimage', { yPercent: -50, xPercent: -50 });
-
+            
             let activeImage;
             gsap.utils.toArray(".container").forEach((el) => {
             let image = el.querySelector('img.swipeimage'),
                 setX, setY,
                 align = e => {
                     setX(e.clientX);
-                    setY(e.clientY);
+                    setY(e.clientY + 400);
+                    if(addY > 0){console.log("addy:", addY)}
+                    // console.log("useGsap: " + e.clientY, "Context:", SContext, "State:", addY)
+                    // console.log("hovertest", scrollPosition)
                 },
                 startFollow = () => document.addEventListener("mousemove", align),
                 stopFollow = () => document.removeEventListener("mousemove", align),
@@ -59,7 +71,7 @@ export default function HoverTest(){
                 setY = gsap.quickTo(image, "y", {duration: 0.6, ease: "power3"});
                 align(e);
             });
-            
+            // console.log("image", image)
             el.addEventListener('mouseleave', () => fade.reverse());
             
             });

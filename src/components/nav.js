@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useRef, useEffect, useContext } from "react"
 import { Link, navigate } from "gatsby"
 import styled from "@emotion/styled"
 import { StaticImage } from "gatsby-plugin-image"
@@ -7,6 +7,7 @@ import Hamburger from "../components/hamburger"
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import RippleButton from "./ripple-btn"
+import { ShareContext, ShareContextProvider } from "../components/context"
 
 
 
@@ -16,6 +17,11 @@ const Wrapper = styled.div`
 width: 100vw;
 overflow-x: clip;
 z-index: 500;
+a {
+:hover {
+cursor: pointer;
+}
+}
 .navbar {
     overflow-x: clip;
     top: 0;
@@ -184,10 +190,11 @@ z-index: 500;
 
 export default function Nav({smoother}){
     const [active, setActive] = useState(false)
-
+    const SContext = useContext(ShareContext)
+    // console.log("hello nav:", SContext, ShareContext)
     // if(window){ console.log("location: ", window.location.hash)}
    
-
+    // console.log("smoother",smoother)
     const navref = useRef();
     const { contextSafe } = useGSAP({ scope: navref });
 
@@ -249,10 +256,14 @@ export default function Nav({smoother}){
                     <StaticImage src="../images/MOTOSCHOOL.png" alt="thoughtfulHQ" />
                     {/* ORDINARY DIGITAL &copy; */}
                 </Link>
+                {/* <div
+                    onClick={() => {toggleShare}}>
+                    Some content here
+                </div> */}
                 <div className="middle-content">
                     <Link to="/projects">About</Link>
-                    <Link to="/#services">Our Tracks</Link>
-                    <Link to="/#services">Pricing</Link>
+                    <a onClick={() => smoother.current.scrollTo(".tracks-left", false, "center center")}>Our Tracks</a>
+                    <a onClick={() => smoother.current.scrollTo(".booking-options", false, "center center")}>Pricing</a>
                     <Link to="/frequently-asked-questions">FAQ</Link>
                 </div>
                 <div className="book-button">
