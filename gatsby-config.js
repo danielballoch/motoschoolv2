@@ -9,7 +9,16 @@ module.exports = {
     title: `motoschoolv2`,
     siteUrl: `https://www.motoschool.co.nz`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", {
+  plugins: ["gatsby-plugin-image", "gatsby-plugin-sitemap", 
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.READ_ONLY_DATOCMS,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
+    {
     resolve: 'gatsby-plugin-manifest',
     options: {
       "icon": "src/images/icon.png"

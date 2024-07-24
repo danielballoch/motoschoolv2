@@ -15,7 +15,7 @@ const IndexPage = (data) => {
   return (
     <Layout>
       <Hero/>
-      <HoverTest/>
+      {/* <HoverTest/> */}
       <Lessons/>
       <Tracks/>
       <Coach/>

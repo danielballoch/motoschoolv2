@@ -205,7 +205,7 @@ export default function Nav(){
                     </div>
                     <div className="section3">
                         <Link to="/contact" className="head"><b>CONTACT</b></Link>
-                        <a href="mailto:daniel@thoughtfulhq.com">MOTOSCHOOL@GMAIL.COM</a>
+                        <a href="mailto:daniel@thoughtfulhq.com">PHIL@MOTOSCHOOL.COM</a>
                         <a href="tel:+64220780868">0277381275</a>
                         <a href="#">Book a session</a>
                     </div>

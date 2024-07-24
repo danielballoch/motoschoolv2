@@ -40,6 +40,9 @@ cursor: pointer;
     // padding: 0 250px;
     align-items: center;
     box-sizing: border-box;
+    a {
+    text-decoration: none;
+    }
     .logo {
         justify-self: flex-start;
         z-index: 200;
@@ -266,11 +269,11 @@ export default function Nav({smoother}){
                     <a onClick={() => smoother.current.scrollTo(".booking-options", false, "center center")}>Pricing</a>
                     <Link to="/frequently-asked-questions">FAQ</Link>
                 </div>
-                <div className="book-button">
+                <a href="/booking" className="book-button">
                     <RippleButton text="BOOK A SESSION"/>
                     {/* <a target="_blank" href="https://calendly.com/thoughtfulhq/30min">Book A Free Discovery Call</a> */}
                     {/* <a href="/contact">BOOK A SESSION</a> */}
-                </div>
+                </a>
                 {/* <Hamburger setActive={() => setActive(!active)} active={active}/> */}
                 {/* <Hamburger setActive={() => onClickGood()} active={active}/> */}
             </div>
