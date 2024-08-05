@@ -4,9 +4,9 @@ import { StaticImage } from "gatsby-plugin-image"
 
 
 const Wrapper = styled.div`
-
 display: flex;
 align-items: center;
+justify-content: center;
 .tracks-left {
 width: 30%;
 margin-left: 50px;
@@ -36,7 +36,7 @@ font-size: 45px;
     display: flex;
     position: relative;
     // overflow: scroll;
-    background-color: grey;
+    // background-color: grey;
     width: 70%;
     height: 100%;
     overflow: clip;
@@ -103,6 +103,50 @@ transform: scale(1.1);
 transform: rotate(180deg);
 }
 }
+
+@media(max-width: 1300px){
+    .arrow-div {
+    top:48%!important;
+    }
+    .subtext {
+    margin-top: 10px!important;
+    }
+}
+
+@media(max-width: 1200px){
+// justify-content: center!important;
+    .image-wrapper {
+    width: 85%!important;
+    }
+    .tracks-left {
+        display: none;
+    }
+    .arrow-div {
+        display: none!important;
+    }
+    .image-track {
+        flex-direction: column;
+    }
+    .mobile-content {
+    display: block!important;
+    }
+}
+.mobile-content {
+display: none;
+}
+.mobile-description {
+background-color: #F1F3F4;
+ padding:20px;
+ margin-top: 0;
+}
+
+ .track-image {
+ margin-top: 100px;
+ :first-of-type {
+ margin-top: 0;
+ }
+ }
+
 `
 
 const ContentBox = styled.div`
@@ -186,10 +230,21 @@ const Tracks = () => {
             </div>
             <div className="image-wrapper">
                 <div className={image === 0? "image-track" : image === 1? "image-track active1" : image === 2? "image-track active2" : "image-track active3"}>
+                    <h3 className="mobile-content">OUR TRACKS & FACILITY</h3>
                     <StaticImage className="track-image" src="../../images/tracks/oval.jpg"/>
+                    <p className="mobile-content">{TracksData[0].title}</p>
+                    <p className="mobile-content mobile-description">{TracksData[0].description}</p>
                     <StaticImage className="track-image" src="../../images/tracks/jellybean.jpg"/>
+                    <p className="mobile-content">{TracksData[1].title}</p>
+                    <p className="mobile-content mobile-description">{TracksData[1].description}</p>
                     <StaticImage className="track-image" src="../../images/tracks/muilt.png"/>
+                    <p className="mobile-content">{TracksData[2].title}</p>
+                    <p className="mobile-content mobile-description">{TracksData[2].description}</p>
                     <StaticImage className="track-image" src="../../images/tracks/trials-sections.png"/>
+                    <p className="mobile-content">{TracksData[3].title}</p>
+                    <p className="mobile-content mobile-description">{TracksData[3].description}</p>
+                    <br/>
+                    <p className="subtext">We’re located just 15 minutes outside of Tauranga right by the Omanawa Hall. Facility address will be sent upon booking!</p>
                 </div>
                 
             </div>

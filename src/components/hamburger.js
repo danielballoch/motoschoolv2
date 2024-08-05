@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import styled from "@emotion/styled"
 
 const Wrapper = styled.div`
-// display: none;
+display: none;
 transition: .3s;
 :hover {
   background: #635bff;
@@ -58,7 +58,7 @@ box-sizing: border-box;
   .active.burger:after {
     transform: translateY(22px) rotate(-45deg);
   } 
-@media(max-width: 1060px){
+@media(max-width: 1200px){
   display: block;
 }
 `

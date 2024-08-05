@@ -8,6 +8,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 
 const Wrapper = styled.div`
+.mob-video-wrap {
+display: none;
+}
 .coach-video-wrap {
 // width: 600px;
 padding-top: 100px;
@@ -15,12 +18,6 @@ margin-bottom: -58vh;
 height: 100vh;
 display: flex;
 justify-content: center;
-}
-p {
-font-size: 14px;
-font-style: italic;
-padding: 10px;
-}
 .video {
 width: 25vw;
 height: 25vh;
@@ -31,6 +28,13 @@ max-height: unset!important;
 // width: 30vw;
 // width: 10%;
 }
+}
+p {
+font-size: 14px;
+font-style: italic;
+padding: 10px;
+}
+
 .coach-banner {
 position: relative;
 width: fit-content;
@@ -62,6 +66,7 @@ overflow: clip;
 border-radius: 20px;
 }
 .track {
+height: 100%;
 width: 2562px;
 display: flex;
 wrap: no-wrap;
@@ -93,6 +98,59 @@ border-radius: 10px;
   .animate-text {
   width: 110px; 
   }
+.mob-wrap {
+display: flex;
+
+}
+@media(max-width: 1245px){
+.track-container {
+// width: 400px;
+width: 50vw;
+}
+}
+@media(max-width: 800px){
+.coach-video-wrap {
+display: none;
+}
+.mob-video-wrap {
+display: block;
+margin-top: 50px;
+h2 {
+width: 100%;
+text-align: center;
+padding-bottom: 10px;
+}
+}
+.mob-video {
+width: 100vw;
+}
+}
+@media(max-width: 600px){
+
+
+.coach-banner {
+margin: auto;
+margin: 20px auto;
+}
+.coach-banner {
+h2 {
+margin-left: 10px!important;
+margin-bottom: 0;
+padding-bottom: 0;
+width: fit-content;
+}
+}
+.track-item {
+font-size: 16px;
+}
+.track-container {
+width: 60vw;
+margin-left: 10px;
+}
+.mob-wrap {
+flex-direction: column;
+}
+}
 `
 
 const PhilSocialProof = ["National and International trials competitor","Riding dirt bikes and trial bikes for 32 years","Private coaching for 16+ years", "First aid trained"]
@@ -145,18 +203,26 @@ const Coach = () => {
                 </video>
                 <p className="animate-text">(scroll)</p>
            </div>
+           <div className="mob-video-wrap">
+            <h2>Who takes motoschool lessons?</h2>
+           <video className="mob-video" loop autoPlay muted controls>
+                    <source src={CoachVideo} type="video/mp4"/>
+                </video>
+           </div>
            <div className="coach-banner">
             <StaticImage className="coach-image" src="../../images/phil-arlo.jpg"/>
-            <h2>Phil Shilton</h2>
-            <div className="track-container">
-                <div className="track">
-                    {PhilSocialProof.map((credit, i) => (
-                        <div className="track-item">{credit}<div className="dash"/></div>
-                    ))}
-                    {PhilSocialProof.map((credit, i) => (
-                        <div className="track-item">{credit}<div className="dash"/></div>
-                    ))}
-                </div>
+            <div className="mob-wrap">
+              <h2>Phil Shilton</h2>
+              <div className="track-container">
+                  <div className="track">
+                      {PhilSocialProof.map((credit, i) => (
+                          <div className="track-item">{credit}<div className="dash"/></div>
+                      ))}
+                      {PhilSocialProof.map((credit, i) => (
+                          <div className="track-item">{credit}<div className="dash"/></div>
+                      ))}
+                  </div>
+              </div>
             </div>
            </div>
     </Wrapper>

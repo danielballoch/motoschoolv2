@@ -168,11 +168,6 @@ cursor: pointer;
     bottom: 0;
     right: 40px;
 }
-@media(max-width: 880px){
-    .book-button {
-        display: none;
-    }
-}
 @media(max-width: 755px){
     .email {
         display: none;
@@ -186,6 +181,14 @@ cursor: pointer;
     .email {
         display: none;
     }
+}
+@media(max-width: 1200px){
+.middle-content {
+display: none;
+}
+.book-button {
+    display: none;
+}
 }
 `
 
@@ -275,18 +278,19 @@ export default function Nav({smoother}){
                     {/* <a href="/contact">BOOK A SESSION</a> */}
                 </a>
                 {/* <Hamburger setActive={() => setActive(!active)} active={active}/> */}
-                {/* <Hamburger setActive={() => onClickGood()} active={active}/> */}
+                <Hamburger setActive={() => onClickGood()} active={active}/>
             </div>
             {/* <div className={active? "sidedrawer" : "sidedrawer drawertoggle"}> */}
             <div className={active? "sidedrawer" : "sidedrawer toggle"}>
                 <a className="close-btn" onClick={() => onClickGood()}><p>Close</p><Hamburger setActive={() => setActive(!active)} active={active}/></a>
                 <Link to="/" onClick={() => onClickGood()}>Home</Link>
-                <Link to="/projects" onClick={() => onClickGood()}>Work</Link>
-                {/* <Link to="/" onClick={() => {onClickGood()}}>Services</Link> */}
+                {/* <Link to="/projects" onClick={() => onClickGood()}>About</Link> */}
+                <Link to="/" onClick={() => {onClickGood()}}>Tracks</Link>
+                <Link to="/" onClick={() => {onClickGood()}}>Pricing</Link>
                 <Link to="/frequently-asked-questions" onClick={() => onClickGood()}>FAQ</Link>
-                <Link to="/contact" onClick={() => onClickGood()}>Contact</Link>
+                <Link to="/contact" onClick={() => onClickGood()}>Book a Session</Link>
                 <a className="email" href="mailto:daniel@thoughtfulhq.com">daniel@thoughtfulhq.com</a>
-                <a className="phone" href="tel:+64220780868">Call +64 22 078 0868</a>
+                <a className="phone" href="tel:+64220780868">Call +64 27 738 1275</a>
             </div>
         </Wrapper>
     )

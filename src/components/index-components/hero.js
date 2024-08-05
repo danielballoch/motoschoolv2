@@ -72,6 +72,55 @@ video {
     height: 100%;
 }
 }
+@media(max-width: 1300px){
+flex-direction: column;
+.hero-left {
+margin: auto;
+width: 800px;
+justify-content: center;
+align-items: center;
+text-align: center;
+h1 {
+width: 800px;
+// font-size: 80px;
+}
+}
+.hero-right {
+height: unset;
+margin: auto;
+margin-bottom: 50px;
+width: 100%;
+video {
+width: 100%;
+height: fit-content;
+}
+}
+}
+@media(max-width: 800px){
+min-height: unset;
+.hero-left {
+h1 {
+width: unset;
+font-size: 60px;
+}
+.hero-copy {
+font-size: 18px!important;
+}
+max-width: 100%;
+width: 100%;
+}
+.button-div {
+flex-direction: column;
+wrap: wrap;
+width: unset!important;
+justify-content: center;
+align-items: center;
+a:first-of-type {
+margin-right: unset!important;
+margin-bottom: 20px!important;
+}
+}
+}
 `
 
 

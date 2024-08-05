@@ -91,6 +91,23 @@ height: 350px;
 .text {
 padding: 20px;
 }
+@media(max-width:920px){
+h2 {
+font-size: 35px!important;
+width: 70%;
+margin: auto!important;
+}
+.card {
+width: 70%;
+}
+}
+@media(max-width:700px){
+h2 {
+font-size: 24px!important;
+width: 98%;
+}
+.card { width: 100%;}
+}
 `
 
 
