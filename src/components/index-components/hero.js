@@ -158,7 +158,7 @@ const Hero = () => {
         </div>
         <div className="hero-right mobile">
         <video loop autoPlay muted>
-            <source src={HeroVideoMobile} type="video/webm"/>
+            <source src={HeroVideoMobile} type="video/mp4"/>
         </video>
         </div>
       
