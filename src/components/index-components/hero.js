@@ -78,9 +78,6 @@ display: none;
 }
 @media(max-width: 1300px){
 flex-direction: column;
-.hero-right {
-height: fit-content;
-}
 .mobile {
 display: block;
 }
@@ -100,7 +97,8 @@ width: 800px;
 }
 .hero-right {
 height: unset;
-margin: auto;
+margin:0;
+padding: 0;
 margin-bottom: 50px;
 width: 100%;
 video {
