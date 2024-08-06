@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import styled from "@emotion/styled"
 import HeroVideo from "../../images/TestVideo1080.webm"
+import HeroVideoMobile from "../../images/HeroVideoMobile.mp4"
 import RippleButton from "../ripple-btn"
 import background from "../../images/hero.jpeg"
 import { ShareContext, ShareContextProvider } from "../context"
@@ -157,7 +158,7 @@ const Hero = () => {
         </div>
         <div className="hero-right mobile">
         <video loop autoPlay muted>
-            <source src={HeroVideo} type="video/webm"/>
+            <source src={HeroVideoMobile} type="video/webm"/>
         </video>
         </div>
       
