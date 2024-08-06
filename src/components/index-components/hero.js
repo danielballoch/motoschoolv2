@@ -72,8 +72,17 @@ video {
     height: 100%;
 }
 }
+.mobile {
+display: none;
+}
 @media(max-width: 1300px){
 flex-direction: column;
+.mobile {
+display: block;
+}
+.pc {
+display: none;
+}
 .hero-left {
 margin: auto;
 width: 800px;
@@ -141,7 +150,12 @@ const Hero = () => {
             <a onClick={() => SContext.Value[1].current.scrollTo(".booking-options")}><RippleButton text={"VIEW BOOKING OPTIONS"}/></a>
         </div>
         </div>
-        <div className="hero-right">
+        <div className="hero-right pc">
+        <video loop autoPlay muted>
+            <source src={HeroVideo} type="video/webm"/>
+        </video>
+        </div>
+        <div className="hero-right mobile">
         <video loop autoPlay muted>
             <source src={HeroVideo} type="video/webm"/>
         </video>
