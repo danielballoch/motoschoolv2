@@ -78,6 +78,9 @@ display: none;
 }
 @media(max-width: 1300px){
 flex-direction: column;
+.hero-right {
+height: fit-content;
+}
 .mobile {
 display: block;
 }
