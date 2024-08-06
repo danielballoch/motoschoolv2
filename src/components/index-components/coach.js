@@ -205,7 +205,19 @@ const Coach = () => {
            </div>
            <div className="mob-video-wrap">
             <h2>Who takes motoschool lessons?</h2>
-           <video className="mob-video" loop autoPlay muted controls>
+           <video className="mob-video"
+            disablePictureInPicture 
+            controlsList="nodownload"
+            id="HeroVideo"
+            title="Motoschool highlights"
+            height="100vh"
+            width="100%"
+            loop
+            muted
+            autoPlay={true}
+            playsInline 
+            preload="auto"
+           >
                     <source src={CoachVideo} type="video/mp4"/>
                 </video>
            </div>

@@ -157,7 +157,19 @@ const Hero = () => {
         </video>
         </div>
         <div className="hero-right mobile">
-        <video loop autoPlay muted>
+        <video
+        disablePictureInPicture 
+        controlsList="nodownload"
+        id="HeroVideo"
+        title="Motoschool highlights"
+        height="100vh"
+        width="100%"
+        loop
+        muted
+        autoPlay={true}
+        playsInline 
+        preload="auto"
+        >
             <source src={HeroVideoMobile} type="video/mp4"/>
         </video>
         </div>
@@ -167,3 +179,20 @@ const Hero = () => {
 }
 
 export default Hero
+
+
+<video className="background-image"
+disablePictureInPicture 
+controlsList="nodownload"
+id="BgVideo"
+title="Phil MX"
+height="100vh"
+width="100%"
+loop
+muted
+autoPlay={true}
+playsInline 
+preload="auto"
+>
+  <source src={VideoSRC} disablePictureInPicture  type="video/mp4" />
+</video>
