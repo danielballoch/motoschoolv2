@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 
 const Wrapper = styled.div`
+// background-color: black;
 .mob-video-wrap {
 display: none;
 }
@@ -123,14 +124,20 @@ padding-bottom: 10px;
 }
 .mob-video {
 width: 100vw;
+height: 100%;
 }
 }
 @media(max-width: 600px){
-
+.title {
+margin-top: 100px!important;
+width: 90vw!important;
+}
 
 .coach-banner {
 margin: auto;
-margin: 20px auto;
+// margin: 20px auto;
+margin-top: -4px;
+border-radius: 0;
 }
 .coach-banner {
 h2 {
@@ -141,7 +148,7 @@ width: fit-content;
 }
 }
 .track-item {
-font-size: 16px;
+font-size: 12px;
 }
 .track-container {
 width: 60vw;
@@ -204,7 +211,7 @@ const Coach = () => {
                 <p className="animate-text">(scroll)</p>
            </div>
            <div className="mob-video-wrap">
-            <h2>Who takes motoschool lessons?</h2>
+            <h2 className="title">Who takes motoschool lessons?</h2>
            <video className="mob-video"
             disablePictureInPicture 
             controlsList="nodownload"
