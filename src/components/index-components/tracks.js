@@ -141,7 +141,7 @@ background-color: #F1F3F4;
 }
 
  .track-image {
- margin-top: 100px;
+ margin-top: 30px;
  :first-of-type {
  margin-top: 0;
  }
@@ -232,16 +232,16 @@ const Tracks = () => {
                 <div className={image === 0? "image-track" : image === 1? "image-track active1" : image === 2? "image-track active2" : "image-track active3"}>
                     <h3 className="mobile-content">OUR TRACKS & FACILITY</h3>
                     <StaticImage className="track-image" src="../../images/tracks/oval.jpg"/>
-                    <p className="mobile-content">{TracksData[0].title}</p>
+                    <h3 className="mobile-content">{TracksData[0].title}</h3>
                     <p className="mobile-content mobile-description">{TracksData[0].description}</p>
                     <StaticImage className="track-image" src="../../images/tracks/jellybean.jpg"/>
-                    <p className="mobile-content">{TracksData[1].title}</p>
+                    <h3 className="mobile-content">{TracksData[1].title}</h3>
                     <p className="mobile-content mobile-description">{TracksData[1].description}</p>
                     <StaticImage className="track-image" src="../../images/tracks/muilt.png"/>
-                    <p className="mobile-content">{TracksData[2].title}</p>
+                    <h3 className="mobile-content">{TracksData[2].title}</h3>
                     <p className="mobile-content mobile-description">{TracksData[2].description}</p>
                     <StaticImage className="track-image" src="../../images/tracks/trials-sections.png"/>
-                    <p className="mobile-content">{TracksData[3].title}</p>
+                    <h3 className="mobile-content">{TracksData[3].title}</h3>
                     <p className="mobile-content mobile-description">{TracksData[3].description}</p>
                     <br/>
                     <p className="subtext">We’re located just 15 minutes outside of Tauranga right by the Omanawa Hall. Facility address will be sent upon booking!</p>

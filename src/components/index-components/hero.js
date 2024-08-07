@@ -109,6 +109,7 @@ height: fit-content;
 }
 @media(max-width: 800px){
 min-height: unset;
+height: fit-content!important;
 .hero-left {
 h1 {
 width: unset;
