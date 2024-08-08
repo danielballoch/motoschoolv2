@@ -85,6 +85,7 @@ display: block;
 display: none;
 }
 .hero-left {
+margin-bottom: 0;
 margin: auto;
 width: 800px;
 justify-content: center;
