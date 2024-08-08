@@ -117,6 +117,13 @@ transform: rotate(180deg);
 // justify-content: center!important;
     .image-wrapper {
     width: 85%!important;
+    h2 {
+    font-size: 40px!important;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #122546;
+    opacity: 0.2;
+    }
     }
     .tracks-left {
         display: none;
@@ -130,6 +137,7 @@ transform: rotate(180deg);
     .mobile-content {
     display: block!important;
     }
+    
 }
 .mobile-content {
 display: none;
@@ -230,7 +238,7 @@ const Tracks = () => {
             </div>
             <div className="image-wrapper">
                 <div className={image === 0? "image-track" : image === 1? "image-track active1" : image === 2? "image-track active2" : "image-track active3"}>
-                    <h3 className="mobile-content">OUR TRACKS & FACILITY</h3>
+                    <h2 className="mobile-content">OUR TRACKS & FACILITY</h2>
                     <StaticImage className="track-image" src="../../images/tracks/oval.jpg"/>
                     <h3 className="mobile-content">{TracksData[0].title}</h3>
                     <p className="mobile-content mobile-description">{TracksData[0].description}</p>

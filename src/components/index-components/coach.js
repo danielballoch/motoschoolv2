@@ -213,6 +213,7 @@ const Coach = () => {
            <div className="mob-video-wrap">
             <h2 className="title">Who takes motoschool lessons?</h2>
            <video className="mob-video"
+            controls
             disablePictureInPicture 
             controlsList="nodownload"
             id="HeroVideo"
@@ -225,7 +226,7 @@ const Coach = () => {
             playsInline 
             preload="auto"
            >
-                    <source src={CoachVideo} type="video/mp4"/>
+                    <source src={CoachVideo} type="video/mp4" disablePictureInPicture />
                 </video>
            </div>
            <div className="coach-banner">

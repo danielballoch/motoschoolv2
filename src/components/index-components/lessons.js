@@ -11,7 +11,7 @@ import 'swiper/css/scrollbar';
 
 
 const Wrapper = styled.div`
-padding-top: 170px;
+padding-top: 100px;
 padding-bottom: 80px;
 background-color: white;
 // width: 100%;
@@ -102,9 +102,13 @@ width: 70%;
 }
 }
 @media(max-width:700px){
-h2 {
-font-size: 24px!important;
-width: 98%;
+.lessons-title {
+  font-size: 40px!important;
+  text-align: center;
+  padding-bottom: 10px;
+  color: #122546;
+  opacity: 0.2;
+  width: 98%;
 }
 .card { width: 100%;}
 }
@@ -115,7 +119,7 @@ const Lessons = () => {
   const swiper = useSwiper();
   return (
     <Wrapper>
-      <h2>TRIALS LESSONS FOR EVERY AGE & SKILL LEVEL</h2>
+      <h2 className="lessons-title">TRIALS LESSONS FOR EVERY AGE & SKILL LEVEL</h2>
       {/* <p className="intro-text">We can take you or your kids from absolute beginners to skilled riders able to ride over logs, rocks, pipes, hill climbs, basic jumps, pulling wheelies and anything else you want to learn. For your first visit you will be on an electric bike.</p> */}
         <div className="top-div">
           

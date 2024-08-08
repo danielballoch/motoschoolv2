@@ -110,6 +110,9 @@ height: fit-content;
 @media(max-width: 800px){
 min-height: unset;
 height: fit-content!important;
+.hero-right {
+max-height: calc(100vw * 0.6)
+}
 .hero-left {
 h1 {
 width: unset;
@@ -159,8 +162,8 @@ const Hero = () => {
         </video>
         </div>
         <div className="hero-right mobile">
-        <video disablePictureInPicture controlsList="nodownload" id="HeroVideo" title="Motoschool highlights" height="100vh" width="100%" loop muted autoPlay={true} playsInline preload="auto">
-            <source src={HeroVideoMobile} type="video/mp4"/>
+        <video disablePictureInPicture controls controlsList="nodownload" id="HeroVideo" title="Motoschool highlights" height="100vh" width="100%" loop muted autoPlay={true} playsInline preload="auto">
+            <source src={HeroVideoMobile} type="video/mp4" disablePictureInPicture />
         </video>
         </div>
       
