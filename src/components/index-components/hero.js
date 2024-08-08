@@ -163,7 +163,7 @@ const Hero = () => {
         </video>
         </div>
         <div className="hero-right mobile">
-        <video disablePictureInPicture controls controlsList="nodownload" id="HeroVideo" title="Motoschool highlights" height="100vh" width="100%" loop muted autoPlay={true} playsInline preload="auto">
+        <video disablePictureInPicture controls controlsList="nodownload" id="HeroVideo" title="Motoschool highlights" height="auto" width="100%" loop muted autoPlay={true} playsInline preload="auto">
             <source src={HeroVideoMobile} type="video/mp4" disablePictureInPicture />
         </video>
         </div>
