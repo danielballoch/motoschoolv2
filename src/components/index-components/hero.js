@@ -68,10 +68,6 @@ justify-content: center;
     height: 88vh;
     margin-left: -60px;
     width: 65vw;
-video {
-    // width: 100%;
-    height: 100%;
-}
 }
 .mobile {
 display: none;
@@ -104,7 +100,6 @@ margin-bottom: 50px;
 width: 100%;
 video {
 width: 100%;
-height: fit-content;
 }
 }
 }
