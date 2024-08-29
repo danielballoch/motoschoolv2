@@ -117,6 +117,7 @@ transform: rotate(180deg);
 @media(max-width: 1200px){
 // justify-content: center!important;
     .image-wrapper {
+    background-color: unset!important;
     width: 85%!important;
     h2 {
     width: 100%!important;

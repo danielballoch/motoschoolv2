@@ -272,11 +272,11 @@ export default function Nav({smoother}){
                     <a onClick={() => smoother.current.scrollTo(".booking-options", false, "center center")}>Pricing</a>
                     <Link to="/frequently-asked-questions">FAQ</Link>
                 </div>
-                <a href="/booking" className="book-button">
+                <Link to="/booking" className="book-button">
                     <RippleButton text="BOOK A SESSION"/>
                     {/* <a target="_blank" href="https://calendly.com/thoughtfulhq/30min">Book A Free Discovery Call</a> */}
                     {/* <a href="/contact">BOOK A SESSION</a> */}
-                </a>
+                </Link>
                 {/* <Hamburger setActive={() => setActive(!active)} active={active}/> */}
                 <Hamburger setActive={() => onClickGood()} active={active}/>
             </div>

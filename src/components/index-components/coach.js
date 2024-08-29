@@ -92,6 +92,12 @@ width: 8px;
 background-color: black;
 border-radius: 10px;
 }
+.mob-coach-credit {
+// padding-left: 10px;
+}
+li {
+color: white;
+}
 @keyframes track-animation {
   from {transform: translateX(0);}
   to {transform: translateX(-50%);}
@@ -129,6 +135,9 @@ width: 50vw;
 // }
 // }
 @media(max-width: 800px){
+.mob-coach-credit {
+max-width: 60vw;
+}
 .coach-video-wrap {
 display: none;
 }
@@ -150,7 +159,9 @@ font-size: 30px!important;
 margin-top: 100px!important;
 width: 90vw!important;
 }
+
 .coach-banner {
+width: 100vw;
 margin: auto;
 // margin: 20px auto;
 margin-top: -4px;
@@ -161,7 +172,7 @@ h2 {
 margin-left: 10px!important;
 margin-bottom: 0;
 padding-bottom: 0;
-width: 100vw;
+// width: 100vw;
 box-sizing: border-box;
 }
 }
@@ -251,7 +262,15 @@ const Coach = () => {
             <StaticImage className="coach-image" src="../../images/phil-arlo.jpg"/>
             <div className="mob-wrap">
               <h2>Phil Shilton</h2>
-              <div className="track-container">
+              <div className="mob-coach-credit">
+                <ul>
+                  <li>{PhilSocialProof[0]}</li>
+                  <li>{PhilSocialProof[1]}</li>
+                  <li>{PhilSocialProof[2]}</li>
+                  <li>{PhilSocialProof[3]}</li>
+                </ul>
+              </div>
+              {/* <div className="track-container">
                   <div className="track">
                       {PhilSocialProof.map((credit, i) => (
                           <div className="track-item">{credit}<div className="dash"/></div>
@@ -260,7 +279,7 @@ const Coach = () => {
                           <div className="track-item">{credit}<div className="dash"/></div>
                       ))}
                   </div>
-              </div>
+              </div> */}
             </div>
            </div>
     </Wrapper>

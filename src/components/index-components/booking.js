@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import { StaticImage } from "gatsby-plugin-image"
 import RippleButton from "../ripple-btn"
@@ -243,7 +244,7 @@ const Booking = () => {
             <div className="header-right">
                 <h2>TRY MOTO TRIALS TODAY</h2>
                 <div className="header-items">
-                    <a href="#" className="book-button">BOOK A SESSION</a>
+                    <Link to="/booking" className="book-button">BOOK A SESSION</Link>
                     <p>OR REACH OUT <br className="pc"/>TO PHIL DIRECTLY</p>
                     <a href="mailto:philsmotoschool@outlook.com" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/email.png"/>philsmotoschool@outlook.com</a> 
                     <a href="tel:+64220780868" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/phone3.png"/>+64 27 738 1275</a>
@@ -263,7 +264,7 @@ const Booking = () => {
                         </div>
                         <h3>$80 - Gear Included</h3>
                     </div>
-                    <a href="#" className="booking-button">BOOK NOW</a>
+                    <Link to="/booking" className="booking-button">BOOK NOW</Link>
                 </div>
                 <div className="booking-option ripple">
                     <div className="option-content">
@@ -277,7 +278,7 @@ const Booking = () => {
                         </div>
                         <h3>$145 - Gear Included</h3>
                     </div>
-                    <a href="#" className="booking-button">BOOK NOW</a>
+                    <Link to="/booking" className="booking-button">BOOK NOW</Link>
                 </div>
                 <div className="booking-option ripple">
                     <div className="option-content">
@@ -290,7 +291,7 @@ const Booking = () => {
                         </div>
                         <h3>$100 Per Hour</h3>
                     </div>
-                    <a href="#" className="booking-button">BOOK NOW</a>
+                    <Link to="/booking" className="booking-button">BOOK NOW</Link>
                 </div>
            </div>
     </Wrapper>
