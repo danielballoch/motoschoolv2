@@ -194,9 +194,20 @@ const PhilSocialProof = ["National and International trials competitor","Riding 
 
 const Coach = () => {
     const featurebox = useRef();
+    const video = useRef();
     useGSAP(
         () => {
             console.log("hello")
+            ScrollTrigger.create({
+              trigger: ".mob-video",
+              start: '-200 50%',
+              end: '500 50%',
+              markers: true,
+              onEnter: () => {video.current.play();},
+              onEnterBack: () => {video.current.play();},
+              onLeave: () => {video.current.pause();},
+              onLeaveBack: () => {video.current.pause();},
+          })
             gsap.to(".coach-video-wrap", {
               scrollTrigger: {
                 trigger: ".coach-video-wrap",
@@ -242,6 +253,7 @@ const Coach = () => {
            <div className="mob-video-wrap">
             <h2 className="title">Who takes motoschool lessons?</h2>
            <video className="mob-video"
+            ref={video}
             controls
             disablePictureInPicture 
             controlsList="nodownload"
@@ -251,7 +263,6 @@ const Coach = () => {
             width="100%"
             loop
             muted
-            autoPlay={true}
             playsInline 
             preload="auto"
            >
