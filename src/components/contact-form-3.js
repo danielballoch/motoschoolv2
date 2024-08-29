@@ -137,6 +137,13 @@ transition: .3s;
 .react-date-picker__inputGroup__input {
 padding: 0;
 }
+@media(max-width: 940px){
+    width: 90vw!important;
+    form {
+    box-sizing: border-box;
+    width: 90vw!important;
+}
+.
 `
 
 function isWithinRange(date, range) {

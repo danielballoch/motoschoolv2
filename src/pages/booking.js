@@ -54,7 +54,7 @@ font-size: 20px;
   position: relative;
   // overflow: scroll;
   // background-color: grey;
-  width: 100%;
+  width: 110%;
   height: 100%;
   overflow-x: clip;
 }
@@ -71,6 +71,30 @@ font-size: 20px;
 .active3 {
     // transform: translateX(-300%);
 }
+  @media(max-width: 940px){
+  .active1 {
+    transform: translateX(-90vw) translateX(-100px);
+  }
+  .active2 {
+      transform: translateX(-180vw) translateX(-200px);
+  }
+  .active3 {
+      transform: translateX(-260vw) translateX(-300px);
+  }
+  .booking-section {
+  padding: 10px;
+  width: 95vw;
+  box-sizing: border-box;
+  }
+  }
+  @media(max-width: 470px){
+  .booking-section {
+  h1 {
+  font-size: 50px;
+  }
+  }
+  
+  }
 `
 
 const IndexPage = () => {

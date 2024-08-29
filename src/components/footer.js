@@ -205,7 +205,7 @@ export default function Nav(){
                     </div>
                     <div className="section3">
                         <Link to="/contact" className="head"><b>CONTACT</b></Link>
-                        <a href="mailto:daniel@thoughtfulhq.com">PHIL@MOTOSCHOOL.COM</a>
+                        <a href="mailto:philsmotoschool@outlook.com">philsmotoschool@outlook.com</a>
                         <a href="tel:+64220780868">0277381275</a>
                         <a href="#">Book a session</a>
                     </div>
@@ -220,7 +220,7 @@ export default function Nav(){
                 <div className="bottom-footer">
                     <Link to="/">© 2024 MOTOSCHOOL. All rights reserved.</Link>
                     <Link to="/terms-and-conditions">Privacy Policy</Link>
-                    <a to="https://www.thoughtfulhq.com">Website by thoughtfulHQ</a>
+                    <a href="https://www.tyrocreative.co.nz" target="_blank">Website by TYRO Creative</a>
                 </div>
             </div>
         </Wrapper>

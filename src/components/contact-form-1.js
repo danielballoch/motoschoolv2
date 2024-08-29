@@ -71,6 +71,14 @@ form {
         outline: 0;
     }
 }
+@media(max-width: 940px){
+width: 90vw!important;
+form {
+box-sizing: border-box;
+width: 90vw!important;
+}
+
+}
 `
 
 

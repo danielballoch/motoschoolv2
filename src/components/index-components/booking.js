@@ -194,6 +194,7 @@ height: 40px;
 @media(max-width: 1350px){
 display: flex;
 flex-direction: column-reverse;
+
 .booking-options {
 flex-direction: column;
 justify-content: center;
@@ -207,16 +208,23 @@ justify-content: center;
 h2 {
 display: none;
 }
-
+.pc {display: none;}
+.book-button, .contact-button {
+box-sizing: border-box;
+width: 100%!important;
+height: 100px!important;
+font-size: 18px;
+}
 .header-items {
 max-width: 420px;
 width: 95vw;
 flex-direction: column;
 align-items: start;
-margin: 15px 0;
+margin: 50px 0;
 // width: fit-content;
 a, p {
 margin: 5px 0;
+width: 100%;
 }
 }
 }
@@ -236,8 +244,8 @@ const Booking = () => {
                 <h2>TRY MOTO TRIALS TODAY</h2>
                 <div className="header-items">
                     <a href="#" className="book-button">BOOK A SESSION</a>
-                    <p>OR REACH OUT<br/>TO PHIL DIRECTLY</p>
-                    <a href="mailto:philsmotoschool@outlook.com" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/email.png"/>PHIL@MOTOSCHOOL.COM</a> 
+                    <p>OR REACH OUT <br className="pc"/>TO PHIL DIRECTLY</p>
+                    <a href="mailto:philsmotoschool@outlook.com" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/email.png"/>philsmotoschool@outlook.com</a> 
                     <a href="tel:+64220780868" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/phone3.png"/>+64 27 738 1275</a>
                 </div>
             </div>

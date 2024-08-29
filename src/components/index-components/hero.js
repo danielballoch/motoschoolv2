@@ -68,6 +68,9 @@ justify-content: center;
     height: 88vh;
     margin-left: -60px;
     width: 65vw;
+    video {
+    height: 100vh;
+    }
 }
 .mobile {
 display: none;
@@ -99,6 +102,7 @@ padding: 0;
 margin-bottom: 50px;
 width: 100%;
 video {
+height: unset;
 width: 100%;
 }
 }
@@ -108,6 +112,9 @@ min-height: unset;
 height: fit-content!important;
 .hero-right {
 max-height: calc(100vw * 0.6)
+video {
+height: unset;
+}
 }
 .hero-left {
 h1 {

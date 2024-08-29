@@ -109,6 +109,25 @@ display: flex;
 width: 50vw;
 }
 }
+// @media(max-width: 800px){
+
+// .coach-video-wrap {
+// display: none;
+// }
+// .mob-video-wrap {
+// display: block;
+// margin-top: 50px;
+// h2 {
+// width: 100%;
+// text-align: center;
+// padding-bottom: 10px;
+// }
+// }
+// .mob-video {
+// width: 100vw;
+// height: 100%;
+// }
+// }
 @media(max-width: 800px){
 .coach-video-wrap {
 display: none;
@@ -126,13 +145,11 @@ padding-bottom: 10px;
 width: 100vw;
 height: 100%;
 }
-}
-@media(max-width: 600px){
 .title {
+font-size: 30px!important;
 margin-top: 100px!important;
 width: 90vw!important;
 }
-
 .coach-banner {
 margin: auto;
 // margin: 20px auto;
@@ -144,7 +161,8 @@ h2 {
 margin-left: 10px!important;
 margin-bottom: 0;
 padding-bottom: 0;
-width: fit-content;
+width: 100vw;
+box-sizing: border-box;
 }
 }
 .track-item {

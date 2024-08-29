@@ -33,6 +33,7 @@ font-size: 45px;
     transform: translateX(-300%);
 }
 .image-wrapper {
+    background-color: #517134;
     display: flex;
     position: relative;
     // overflow: scroll;
@@ -118,6 +119,7 @@ transform: rotate(180deg);
     .image-wrapper {
     width: 85%!important;
     h2 {
+    width: 100%!important;
     font-size: 40px!important;
     text-align: center;
     padding-bottom: 10px;
@@ -141,6 +143,12 @@ transform: rotate(180deg);
 }
 .mobile-content {
 display: none;
+.track-image {
+ margin-top: 30px;
+ :first-of-type {
+ margin-top: 0;
+ }
+ }
 }
 .mobile-description {
 background-color: #F1F3F4;
@@ -148,12 +156,7 @@ background-color: #F1F3F4;
  margin-top: 0;
 }
 
- .track-image {
- margin-top: 30px;
- :first-of-type {
- margin-top: 0;
- }
- }
+ 
 
 `
 
