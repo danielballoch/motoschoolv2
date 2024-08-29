@@ -123,6 +123,7 @@ height: 40px;
     display: flex;
     justify-content: center;
     .booking-option { 
+        text-decoration: none;
         display: flex;
         flex-direction: column;
         margin: 10px;
@@ -252,7 +253,7 @@ const Booking = () => {
             </div>
            </div>
            <div className="booking-options">
-                <div className="booking-option ripple">
+                <Link to="/booking" className="booking-option ripple">
                     <div className="option-content">
                         <h3>30 MINUTE LESSON </h3>
                         <p>This package includes a 30min lesson with one on one coaching from Phil at the MOTOSCHOOL facility. One set of bike and gear hire is included in the price.</p>
@@ -264,9 +265,9 @@ const Booking = () => {
                         </div>
                         <h3>$80 - Gear Included</h3>
                     </div>
-                    <Link to="/booking" className="booking-button">BOOK NOW</Link>
-                </div>
-                <div className="booking-option ripple">
+                    <a  className="booking-button">BOOK NOW</a>
+                </Link>
+                <Link to="/booking" className="booking-option ripple">
                     <div className="option-content">
                         <h3>1 HOUR LESSON </h3>
                         <p>This package includes a 1 hour lesson with one on one coaching from Phil at the MOTOSCHOOL facility. One set of bike and gear hire is included in the price.</p>
@@ -278,9 +279,9 @@ const Booking = () => {
                         </div>
                         <h3>$145 - Gear Included</h3>
                     </div>
-                    <Link to="/booking" className="booking-button">BOOK NOW</Link>
-                </div>
-                <div className="booking-option ripple">
+                    <a  className="booking-button">BOOK NOW</a>
+                </Link>
+                <Link to="/booking" className="booking-option ripple">
                     <div className="option-content">
                         <h3>COACHING ONLY</h3>
                         <p>If you have your own bike and gear Phil offers coaching and track access at $100 per hour. </p>
@@ -291,8 +292,8 @@ const Booking = () => {
                         </div>
                         <h3>$100 Per Hour</h3>
                     </div>
-                    <Link to="/booking" className="booking-button">BOOK NOW</Link>
-                </div>
+                    <a  className="booking-button">BOOK NOW</a>
+                </Link>
            </div>
     </Wrapper>
   )

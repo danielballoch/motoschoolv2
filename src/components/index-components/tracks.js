@@ -65,8 +65,9 @@ font-style: italic;
 
 .arrow-div {
 position: absolute;
+// position: fixed;
 left: calc(30% + 70px - 30px);
-top: 45%;
+// top: 45%;
 z-index: 100;
 display: flex;
 flex-direction: column-reverse;
@@ -107,7 +108,7 @@ transform: rotate(180deg);
 
 @media(max-width: 1300px){
     .arrow-div {
-    top:48%!important;
+    top:40%!important;
     }
     .subtext {
     margin-top: 10px!important;

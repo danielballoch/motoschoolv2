@@ -29,6 +29,7 @@ h1 {
 .nav {
 display: flex;
 .nav-item {
+padding: 15px 0;
 width: 33%;
 transition: .3s;
 text-align: center;
@@ -86,6 +87,16 @@ font-size: 20px;
   width: 95vw;
   box-sizing: border-box;
   }
+  }
+  @media(max-width: 700px){
+  .nav {
+    .nav-item {
+    h2 {
+    font-size: 20px!important;
+    }
+  }
+  }
+  
   }
   @media(max-width: 470px){
   .booking-section {
