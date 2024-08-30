@@ -199,15 +199,14 @@ const Coach = () => {
         () => {
             console.log("hello")
             ScrollTrigger.create({
-              trigger: ".mob-video",
-              start: '-200 50%',
-              end: '500 50%',
-              // markers: true,
-              onEnter: () => {video.current.play();},
-              onEnterBack: () => {video.current.play();},
-              onLeave: () => {video.current.pause();},
-              onLeaveBack: () => {video.current.pause();},
-          })
+                trigger: ".mob-video",
+                start: '-200 50%',
+                end: '500 50%',
+                onEnter: () => {video.current.play();},
+                onEnterBack: () => {video.current.play();},
+                onLeave: () => {video.current.pause();},
+                onLeaveBack: () => {video.current.pause();},
+            })
             gsap.to(".coach-video-wrap", {
               scrollTrigger: {
                 trigger: ".coach-video-wrap",
@@ -242,7 +241,7 @@ const Coach = () => {
         { scope: featurebox }
     );
   return (
-    <Wrapper ref={featurebox}>
+    <Wrapper ref={featurebox} className="coach-section-tag">
            <div className="coach-video-wrap">
                 <p className="animate-text">Who coaches<br/> the lessons?</p>
                 <video className="video" loop autoPlay muted>

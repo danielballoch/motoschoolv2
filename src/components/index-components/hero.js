@@ -159,7 +159,6 @@ const Hero = () => {
             trigger: ".mobile",
             start: '-500 50%',
             end: '500 50%',
-            // markers: true,
             onEnter: () => {video2.current.play();},
             onEnterBack: () => {video2.current.play();},
             onLeave: () => {video2.current.pause();},
@@ -178,7 +177,7 @@ const Hero = () => {
         <div className="button-div">
             {/* <a href="#">MEET COACH PHIL</a>
             <a href="#">VIEW BOOKING OPTIONS</a> */}
-            <a onClick={() => SContext.Value[1].current.scrollTo(".coach-video-wrap")}><RippleButton text={"MEET COACH PHIL"} /></a>
+            <a onClick={() => SContext.Value[1].current.scrollTo(".coach-section-tag")}><RippleButton text={"MEET COACH PHIL"} /></a>
             <a onClick={() => SContext.Value[1].current.scrollTo(".booking-options")}><RippleButton text={"VIEW BOOKING OPTIONS"}/></a>
         </div>
         </div>

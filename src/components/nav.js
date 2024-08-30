@@ -124,7 +124,7 @@ cursor: pointer;
     // box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     a {
         z-index: 100;
-        font-size: 50px;
+        font-size: 35px;
         padding: 10px;
         color: black;
         text-decoration: none;
@@ -288,7 +288,7 @@ export default function Nav({smoother}){
                 <Link to="/" onClick={() => {onClickGood()}}>Tracks</Link>
                 <Link to="/" onClick={() => {onClickGood()}}>Pricing</Link>
                 <Link to="/frequently-asked-questions" onClick={() => onClickGood()}>FAQ</Link>
-                <Link to="/contact" onClick={() => onClickGood()}>Book a Session</Link>
+                <Link to="/contact" onClick={() => onClickGood()}>Book Now</Link>
                 <a className="email" href="mailto:daniel@thoughtfulhq.com">daniel@thoughtfulhq.com</a>
                 <a className="phone" href="tel:+64220780868">Call +64 27 738 1275</a>
             </div>
