@@ -1,10 +1,12 @@
-import React, { useContext } from "react"
+import React, { useContext, useRef } from "react"
 import styled from "@emotion/styled"
 import HeroVideo from "../../images/TestVideo1080.webm"
 import HeroVideoMobile from "../../images/HeroVideoMobile.mp4"
 import RippleButton from "../ripple-btn"
 import background from "../../images/hero.jpeg"
 import { ShareContext, ShareContextProvider } from "../context"
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Wrapper = styled.div`
 min-height: 115vh;
@@ -143,11 +145,32 @@ margin-bottom: 20px!important;
 
 
 const Hero = () => {
-  const SContext = useContext(ShareContext);
+    const SContext = useContext(ShareContext);
+    const scrollref = useRef();
+    const video2 = useRef();
+  
   console.log("hero", SContext.Value[1])
+//   const wrapref = useRef();
+ 
+  useGSAP(
+      () => {
+          console.log("hello")
+          ScrollTrigger.create({
+            trigger: ".mobile",
+            start: '-500 50%',
+            end: '500 50%',
+            markers: true,
+            onEnter: () => {video2.current.play();},
+            onEnterBack: () => {video2.current.play();},
+            onLeave: () => {video2.current.pause();},
+            onLeaveBack: () => {video2.current.pause();},
+        })
 
+      },
+      { scope: scrollref }
+  );
   return (
-    <Wrapper>
+    <Wrapper ref={scrollref}>
         <div className="hero-left">
         <h1>MOTO TRIALS TRAINING</h1>
         {/* <p>We provide moto-trials coaching, with all gear provided, for the whole family. If you want to take your skills to the next level or have a fun family outing book today!</p> */}
@@ -165,7 +188,7 @@ const Hero = () => {
         </video>
         </div>
         <div className="hero-right mobile">
-        <video disablePictureInPicture controls controlsList="nodownload" id="HeroVideo" title="Motoschool highlights" height="auto" width="100%" loop muted autoPlay={true} playsInline preload="auto">
+        <video ref={video2} disablePictureInPicture controls controlsList="nodownload" id="HeroVideo" title="Motoschool highlights" height="auto" width="100%" loop muted autoPlay={true} playsInline preload="auto">
             <source src={HeroVideoMobile} type="video/mp4" disablePictureInPicture />
         </video>
         </div>

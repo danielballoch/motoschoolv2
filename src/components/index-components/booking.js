@@ -265,7 +265,7 @@ const Booking = () => {
                         </div>
                         <h3>$80 - Gear Included</h3>
                     </div>
-                    <a  className="booking-button">BOOK NOW</a>
+                    <div  className="booking-button">BOOK NOW</div>
                 </Link>
                 <Link to="/booking" className="booking-option ripple">
                     <div className="option-content">
@@ -279,7 +279,7 @@ const Booking = () => {
                         </div>
                         <h3>$145 - Gear Included</h3>
                     </div>
-                    <a  className="booking-button">BOOK NOW</a>
+                    <div  className="booking-button">BOOK NOW</div>
                 </Link>
                 <Link to="/booking" className="booking-option ripple">
                     <div className="option-content">
@@ -292,7 +292,7 @@ const Booking = () => {
                         </div>
                         <h3>$100 Per Hour</h3>
                     </div>
-                    <a  className="booking-button">BOOK NOW</a>
+                    <div  className="booking-button">BOOK NOW</div>
                 </Link>
            </div>
     </Wrapper>
