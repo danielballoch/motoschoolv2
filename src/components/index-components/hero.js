@@ -159,7 +159,7 @@ const Hero = () => {
             trigger: ".mobile",
             start: '-500 50%',
             end: '500 50%',
-            markers: true,
+            // markers: true,
             onEnter: () => {video2.current.play();},
             onEnterBack: () => {video2.current.play();},
             onLeave: () => {video2.current.pause();},

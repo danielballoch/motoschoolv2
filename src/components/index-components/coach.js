@@ -202,7 +202,7 @@ const Coach = () => {
               trigger: ".mob-video",
               start: '-200 50%',
               end: '500 50%',
-              markers: true,
+              // markers: true,
               onEnter: () => {video.current.play();},
               onEnterBack: () => {video.current.play();},
               onLeave: () => {video.current.pause();},
