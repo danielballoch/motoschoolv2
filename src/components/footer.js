@@ -198,19 +198,19 @@ export default function Nav(){
                     </div> */}
                     <div className="section2">
                         <p className="head"><b>NAVIGATE</b></p>
-                        <Link to="/projects">Home</Link>
-                        <Link to="/#services">About</Link>
-                        <Link to="/contact">Our Tracks</Link>
+                        <Link to="/">Home</Link>
+                        <Link to="/#our-tracks">Our Tracks</Link>
+                        <Link to="/#pricing">Pricing</Link>
                         <Link to="/frequently-asked-questions">FAQ</Link>
                     </div>
                     <div className="section3">
-                        <Link to="/contact" className="head"><b>CONTACT</b></Link>
+                        <Link to="/booking" className="head"><b>CONTACT</b></Link>
                         <a href="mailto:philsmotoschool@outlook.com">philsmotoschool@outlook.com</a>
                         <a href="tel:+64220780868">0277381275</a>
-                        <a href="#">Book a session</a>
+                        <Link to="/booking">Book a session</Link>
                     </div>
                     <div className="section3">
-                    <Link to="/contact" className="head"><b>FOLLOW US</b></Link>
+                        <Link to="/contact" className="head"><b>FOLLOW US</b></Link>
                         <div>
                             <a href="#"><StaticImage className="social-icon" src="../images/icons/facebook.png"/></a>
                             <a href="#"><StaticImage className="social-icon" src="../images/icons/instagram.png"/></a>

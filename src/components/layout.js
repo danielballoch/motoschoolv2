@@ -20,10 +20,11 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
 export const PageContext = createContext(null)
 
-export default function Layout({children}){
+export default function Layout({children, dark, home}){
   const [scrollPosition, setScrollPosition] = useState()
   const main = useRef();
   const smoother = useRef();
+  console.log("hello hello", dark)
 
   useGSAP(
     () => {
@@ -47,7 +48,7 @@ export default function Layout({children}){
     <div id="smooth-wrapper" ref={main}>
       <div id="smooth-content">
         {/* <Navbar smoother={smoother}/> */}
-        <Navbar smoother={smoother}/>
+        <Navbar smoother={smoother} dark={dark} home={home}/>
         <ShareContextProvider Value={[scrollPosition, smoother]}>
           <main>{children}</main>
         </ShareContextProvider>

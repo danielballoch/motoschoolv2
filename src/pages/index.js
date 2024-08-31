@@ -13,7 +13,7 @@ const IndexPage = (data) => {
 
   
   return (
-    <Layout>
+    <Layout home={true}>
       <Hero/>
       {/* <HoverTest/> */}
       <Lessons/>

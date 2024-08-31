@@ -22,6 +22,9 @@ a {
 cursor: pointer;
 }
 }
+.dark {
+background-color: rgba(0,0,0,.9); 
+}
 .navbar {
     overflow-x: clip;
     top: 0;
@@ -194,13 +197,14 @@ display: none;
 
 
 
-export default function Nav({smoother}){
+export default function Nav({smoother, dark, home}){
     const [active, setActive] = useState(false)
     const SContext = useContext(ShareContext)
+    const [activeScroll, setActiveScroll] = useState()
     // console.log("hello nav:", SContext, ShareContext)
     // if(window){ console.log("location: ", window.location.hash)}
    
-    // console.log("smoother",smoother)
+    console.log("smoothersdf",smoother)
     const navref = useRef();
     const { contextSafe } = useGSAP({ scope: navref });
 
@@ -230,9 +234,12 @@ export default function Nav({smoother}){
     // useEffect(()=>{
     //     console.log("is the navigation running?")
     //     let location = window.location.hash
-    //     console.log(location)
-    //     if (location === "#contact"){
-    //         smoother.scrollTo("#contact", true)
+    //     console.log("location: ",location)
+    //     if (location === "#tracks-left"){
+    //         console.log("working");
+    //         console.log("smoother:",smoother)
+    //         // smoother.current.scrollTo(".tracks-left", false, "center center");
+    //         // setActiveScroll("#tracks-left")
     //     }
         
     // },[])
@@ -257,7 +264,7 @@ export default function Nav({smoother}){
         <Wrapper id="top" 
         ref={navref}
         >
-            <div className="navbar">
+            <div className={dark?"navbar dark" : "navbar"}>
                 <Link to="/" className="logo">
                     <StaticImage src="../images/MOTOSCHOOL.png" alt="thoughtfulHQ" />
                     {/* ORDINARY DIGITAL &copy; */}
@@ -267,9 +274,17 @@ export default function Nav({smoother}){
                     Some content here
                 </div> */}
                 <div className="middle-content">
-                    <Link to="/projects">About</Link>
+                    <Link to="/">Home</Link>
+                    {home? 
                     <a onClick={() => smoother.current.scrollTo(".tracks-left", false, "center center")}>Our Tracks</a>
+                    : 
+                    <Link to="/#tracks-left">Our Tracks</Link>
+                    }
+                     {home? 
                     <a onClick={() => smoother.current.scrollTo(".booking-options", false, "center center")}>Pricing</a>
+                    : 
+                    <Link to="/#booking-options">Pricing</Link>
+                    }
                     <Link to="/frequently-asked-questions">FAQ</Link>
                 </div>
                 <Link to="/booking" className="book-button">
