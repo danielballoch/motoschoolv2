@@ -107,6 +107,11 @@ form {
             color: black;
         }
 }
+.grecaptcha-badge { visibility: hidden!important; }
+.recaptcha-sub {
+font-size: 14px;
+color: hsla(40,22%,92%,.6);
+}
 .react-date-picker__wrapper {
 width: 100%;
 padding: 15px;
@@ -143,7 +148,7 @@ padding: 0;
     box-sizing: border-box;
     width: 90vw!important;
 }
-.
+
 `
 
 function isWithinRange(date, range) {
@@ -250,7 +255,7 @@ export default function ContactElectrical({setFormStage, timesAvailable, totalPr
                     </div>
 
                     <h3>Total: ${totalPrice}</h3>
-
+                    <p className="recaptcha-sub">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
                     
                     <div>
                     <button className="button-style back" onClick={(e) => {e.preventDefault();setFormStage(1)}}>BACK</button>
