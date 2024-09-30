@@ -1,7 +1,7 @@
 /* html{
     scroll-behavior: smooth;
 } */
-/* .grecaptcha-badge { visibility: hidden!important; } */
+.grecaptcha-badge { visibility: hidden!important; }
 body {
     z-index: 20;
     margin: 0;
