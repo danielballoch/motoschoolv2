@@ -153,7 +153,7 @@ transition: .5s;
 }
 `
 
-export default function Nav(){
+export default function Footer({smoother, home}){
 
     const footer = useRef();
     // const { contextSafe } = useGSAP({scope: footer});
@@ -199,8 +199,18 @@ export default function Nav(){
                     <div className="section2">
                         <p className="head"><b>NAVIGATE</b></p>
                         <Link to="/">Home</Link>
-                        <Link to="/#our-tracks">Our Tracks</Link>
-                        <Link to="/#pricing">Pricing</Link>
+                        {home? 
+                        <a onClick={() => smoother.current.scrollTo(".tracks-left", false, "center center")}>Our Tracks</a>
+                        : 
+                        <Link to="/#tracks-left">Our Tracks</Link>
+                        }
+                        {home? 
+                        <a onClick={() => smoother.current.scrollTo(".booking-options", false, "center center")}>Pricing</a>
+                        : 
+                        <Link to="/#booking-options">Pricing</Link>
+                        }
+                        {/* <Link to="/#our-tracks">Our Tracks</Link>
+                        <Link to="/#pricing">Pricing</Link> */}
                         <Link to="/frequently-asked-questions">FAQ</Link>
                     </div>
                     <div className="section3">
@@ -212,8 +222,8 @@ export default function Nav(){
                     <div className="section3">
                         <Link to="/contact" className="head"><b>FOLLOW US</b></Link>
                         <div>
-                            <a href="#"><StaticImage className="social-icon" src="../images/icons/facebook.png"/></a>
-                            <a href="#"><StaticImage className="social-icon" src="../images/icons/instagram.png"/></a>
+                            <a target="_blank" href="https://www.facebook.com/profile.php?id=61552293804527"><StaticImage className="social-icon" src="../images/icons/facebook.png"/></a>
+                            <a target="_blank" href="#"><StaticImage className="social-icon" src="../images/icons/instagram.png"/></a>
                         </div>
                     </div>
                 </div>

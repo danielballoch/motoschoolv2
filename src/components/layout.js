@@ -52,7 +52,7 @@ export default function Layout({children, dark, home}){
         <ShareContextProvider Value={[scrollPosition, smoother]}>
           <main>{children}</main>
         </ShareContextProvider>
-        <Footer/>
+        <Footer smoother={smoother} home={home}/>
       </div>
     </div>
     </Wrapper>
