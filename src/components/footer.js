@@ -63,6 +63,9 @@ display: flex;
         display: inline-block;
         padding: 5px 0;
         margin: 5px 0;
+        :hover {
+        cursor: pointer;
+        }
     }
 }
 .social-icon {
