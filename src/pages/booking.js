@@ -166,15 +166,15 @@ const IndexPage = () => {
           <h1>MAKE A BOOKING!</h1>
           <div className="nav">
             <div 
-            onClick={() => setFormStage(0)}
+            // onClick={() => setFormStage(0)}
             className={formStage >= 0? "nav-item active" : "nav-item"}
             ><h2>YOUR DETAILS</h2></div>
             <div 
-            onClick={() => setFormStage(1)}
+            // onClick={() => setFormStage(1)}
             className={formStage >= 1? "nav-item active" : "nav-item"}
             ><h2>LESSON TYPE</h2></div>
             <div 
-            onClick={() => setFormStage(2)}
+            // onClick={() => setFormStage(2)}
             className={formStage >= 2? "nav-item active" : "nav-item"}
             ><h2>BOOKING TIME</h2></div>
           </div>
