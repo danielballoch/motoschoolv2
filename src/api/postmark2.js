@@ -35,7 +35,7 @@ export default async(req, res) => {
     if (req.body.lesson === "Coaching only - $100 p/h"){option = "Lesson Hours: "; optionValue = req.body.hours} else {option = "Rental Bikes & Gear: "; optionValue = req.body.bike + ", " + req.body.gear}
     let message = {
       "From": "info@motoschool.co.nz",
-      "To": "daniel@thoughtfulhq.com",
+      "To": "philsmotoschool@outlook.com",
       "ReplyTo": "philsmotoschool@outlook.com",
       "TemplateId" : 36707535,
       "TemplateModel": {
@@ -49,10 +49,10 @@ export default async(req, res) => {
       },
       "MessageStream": "outbound"
     }
-    return client.sendEmailWithTemplate(message).then(
+    client.sendEmailWithTemplate(message).then(
       () => {
         console.log("customer-support-sent")
-        message.To = "philsmotoschool@outlook.com"
+        message.To = "daniel@thoughtfulhq.com"
         message.ReplyTo = req.body.email
         client.sendEmailWithTemplate(message)
       }
@@ -66,7 +66,7 @@ export default async(req, res) => {
     ).then(
       () => {
         console.log("backup-support-sent")
-        res.status(200).json({
+        return res.status(200).json({
           message: "This is updated",
         })
       }

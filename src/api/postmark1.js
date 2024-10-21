@@ -4,16 +4,14 @@ var postmark = require("postmark");
 // Send an email:
 var client = new postmark.ServerClient(process.env.POSTMARK_AUTH);
 
-//validate token through google
+//function to validate token with google re-captcha
 async function validateHuman(token){
-  // console.log("validate human running")
 const secret = process.env.GATSBY_RECAPTCHA_SECRET;
 const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
   {
       method: "POST",
   } 
 )
-//this is where It's failing??
 const data = await response.json();
 return data.success;
 }
@@ -22,6 +20,7 @@ return data.success;
 export default async(req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   console.log(req.body);
+  //call re-captcha validation function
   const human = await validateHuman(req.body.token);
   if (!human){
       // console.log("this message shows we're getting to the !human part")
@@ -32,7 +31,7 @@ export default async(req, res) => {
   try {
     let message = {
       "From": "info@motoschool.co.nz",
-      "To": "daniel@thoughtfulhq.com",
+      "To": "info@motoschool.co.nz",
       "ReplyTo": "philsmotoschool@outlook.com",
       "TemplateId" : 36706722,
       "TemplateModel": {
@@ -43,10 +42,11 @@ export default async(req, res) => {
       },
       "MessageStream": "outbound"
     }
-    return client.sendEmailWithTemplate(message).then(
+    //send emails if human
+    client.sendEmailWithTemplate(message).then(
       () => {
         console.log("customer-support-sent")
-        message.To = "philsmotoschool@outlook.com"
+        message.To = "daniel@thoughtfulhq.com"
         message.ReplyTo = req.body.email
         client.sendEmailWithTemplate(message)
       }
@@ -60,7 +60,7 @@ export default async(req, res) => {
     ).then(
       () => {
         console.log("backup-support-sent")
-        res.status(200).json({
+        return res.status(200).json({
           message: "This is updated",
         })
       }

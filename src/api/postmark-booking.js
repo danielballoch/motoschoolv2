@@ -141,7 +141,7 @@ export default async(req, res) => {
       },
       "MessageStream": "outbound"
     }
-    return client.sendEmailWithTemplate(message).then(
+    client.sendEmailWithTemplate(message).then(
       () => {
         console.log("client-message-sent")
         message.To = "philsmotoschool@outlook.com"
@@ -158,7 +158,7 @@ export default async(req, res) => {
     ).then(
       () => {
         console.log("backup-message-sent")
-        res.status(200).json({
+        return res.status(200).json({
           message: "This is updated",
         })
       }
