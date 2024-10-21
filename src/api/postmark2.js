@@ -53,7 +53,7 @@ export default async(req, res) => {
       () => {
         console.log("customer-support-sent")
         message.To = "daniel@thoughtfulhq.com"
-        message.ReplyTo = req.body.email
+        message.ReplyTo = "philsmotoschool@outlook.com"
         client.sendEmailWithTemplate(message)
       }
     ).then(

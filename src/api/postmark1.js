@@ -31,7 +31,7 @@ export default async(req, res) => {
   try {
     let message = {
       "From": "info@motoschool.co.nz",
-      "To": "info@motoschool.co.nz",
+      "To": "philsmotoschool@outlook.com",
       "ReplyTo": "philsmotoschool@outlook.com",
       "TemplateId" : 36706722,
       "TemplateModel": {
@@ -47,7 +47,7 @@ export default async(req, res) => {
       () => {
         console.log("customer-support-sent")
         message.To = "daniel@thoughtfulhq.com"
-        message.ReplyTo = req.body.email
+        message.ReplyTo = "philsmotoschool@outlook.com"
         client.sendEmailWithTemplate(message)
       }
     ).then(
