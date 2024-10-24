@@ -35,7 +35,7 @@ export default async(req, res) => {
     if (req.body.lesson === "Coaching only - $100 p/h"){option = "Lesson Hours: "; optionValue = req.body.hours} else {option = "Rental Bikes & Gear: "; optionValue = req.body.bike + ", " + req.body.gear}
     let message = {
       "From": "info@motoschool.co.nz",
-      "To": "philsmotoschool@outlook.com",
+      "To": "danielkingballoch@gmail.com",
       "ReplyTo": "philsmotoschool@outlook.com",
       "TemplateId" : 36707535,
       "TemplateModel": {
@@ -49,28 +49,19 @@ export default async(req, res) => {
       },
       "MessageStream": "outbound"
     }
-    client.sendEmailWithTemplate(message).then(
-      () => {
-        console.log("customer-support-sent")
-        message.To = "daniel@thoughtfulhq.com"
-        message.ReplyTo = "philsmotoschool@outlook.com"
-        client.sendEmailWithTemplate(message)
-      }
-    ).then(
-      () => {
-        console.log("client-support-sent")
+    await client.sendEmailWithTemplate(message)
+    console.log("customer-support-sent")
+    message.To = "daniel@thoughtfulhq.com"
+    message.ReplyTo = "philsmotoschool@outlook.com"
+    await client.sendEmailWithTemplate(message)
+    console.log("client-support-sent")
         // message.To = "daniel@thoughtfulhq.com"
         // console.log(message)
         // client.sendEmailWithTemplate(message)
-      }
-    ).then(
-      () => {
-        console.log("backup-support-sent")
-        return res.status(200).json({
-          message: "This is updated",
-        })
-      }
-    )
+    console.log("backup-support-sent")
+    return res.status(200).json({
+      message: "This is updated",
+    })
   } catch (err) {
     console.log(err)
     return res.status(500).json({ message: "There was an error", error: err })
