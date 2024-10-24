@@ -35,7 +35,7 @@ export default async(req, res) => {
     if (req.body.lesson === "Coaching only - $100 p/h"){option = "Lesson Hours: "; optionValue = req.body.hours} else {option = "Rental Bikes & Gear: "; optionValue = req.body.bike + ", " + req.body.gear}
     let message = {
       "From": "info@motoschool.co.nz",
-      "To": "danielkingballoch@gmail.com",
+      "To": "philsmotoschool@outlook.com",
       "ReplyTo": "philsmotoschool@outlook.com",
       "TemplateId" : 36707535,
       "TemplateModel": {
@@ -50,20 +50,16 @@ export default async(req, res) => {
       "MessageStream": "outbound"
     }
     await client.sendEmailWithTemplate(message)
-    console.log("customer-support-sent")
+    console.log("customer-lead-sent")
     message.To = "daniel@thoughtfulhq.com"
     message.ReplyTo = "philsmotoschool@outlook.com"
     await client.sendEmailWithTemplate(message)
-    console.log("client-support-sent")
-        // message.To = "daniel@thoughtfulhq.com"
-        // console.log(message)
-        // client.sendEmailWithTemplate(message)
-    console.log("backup-support-sent")
+    console.log("backup-lead-sent")
     return res.status(200).json({
-      message: "This is updated",
+      message: "Lead Form 2 sent successfully",
     })
   } catch (err) {
     console.log(err)
-    return res.status(500).json({ message: "There was an error", error: err })
+    return res.status(500).json({ message: "There was a form error", error: err })
   }
 }

@@ -141,30 +141,21 @@ export default async(req, res) => {
       },
       "MessageStream": "outbound"
     }
-    client.sendEmailWithTemplate(message).then(
-      () => {
-        console.log("client-message-sent")
-        message.To = "philsmotoschool@outlook.com"
-        message.ReplyTo = req.body.email
-        message.TemplateId = 34430549
-        client.sendEmailWithTemplate(message)
-      }
-    ).then(
-      () => {
-        console.log("admin-message-sent")
-        message.To = "daniel@thoughtfulhq.com"
-        client.sendEmailWithTemplate(message)
-      }
-    ).then(
-      () => {
-        console.log("backup-message-sent")
-        return res.status(200).json({
-          message: "This is updated",
-        })
-      }
-    )
+    await client.sendEmailWithTemplate(message)
+    console.log("client-booking-sent")
+    message.To = "philsmotoschool@outlook.com"
+    message.ReplyTo = req.body.email
+    message.TemplateId = 34430549
+    await client.sendEmailWithTemplate(message)
+    console.log("admin-booking-sent")
+    message.To = "daniel@thoughtfulhq.com"
+    await client.sendEmailWithTemplate(message)
+    console.log("backup-booking-sent")
+    return res.status(200).json({
+      message: "Booking Form Sent Successfully",
+    })
   } catch (err) {
     console.log(err)
-    return res.status(500).json({ message: "There was an error", error: err })
+    return res.status(500).json({ message: "There was a form error", error: err })
   }
 }
