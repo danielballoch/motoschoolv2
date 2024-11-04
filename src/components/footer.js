@@ -219,7 +219,7 @@ export default function Footer({smoother, home}){
                     <div className="section3">
                         <Link to="/booking" className="head"><b>CONTACT</b></Link>
                         <a href="mailto:philsmotoschool@outlook.com">philsmotoschool@outlook.com</a>
-                        <a href="tel:+64220780868">0277381275</a>
+                        <a href="tel:+64277381275">0277381275</a>
                         <Link to="/booking">Book a session</Link>
                     </div>
                     <div className="section3">

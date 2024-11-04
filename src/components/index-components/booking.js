@@ -248,7 +248,7 @@ const Booking = () => {
                     <Link to="/booking" className="book-button">BOOK A SESSION</Link>
                     <p>OR REACH OUT <br className="pc"/>TO PHIL DIRECTLY</p>
                     <a href="mailto:philsmotoschool@outlook.com" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/email.png"/>philsmotoschool@outlook.com</a> 
-                    <a href="tel:+64220780868" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/phone3.png"/>+64 27 738 1275</a>
+                    <a href="tel:+64277381275" className="contact-button"><StaticImage className="contact-icon" src="../../images/icons/phone3.png"/>+64 27 738 1275</a>
                 </div>
             </div>
            </div>
