@@ -114,6 +114,8 @@ const IndexPage = () => {
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [phone, setPhone] = useState()
+  const [adults, setAdults] = useState()
+  const [youth, setYouth] = useState()
 
   const [lessonString, setLessonString] = useState("30 minute lesson - $80")
   const [gearString, setGearString] = useState("1 Set - (included)")
@@ -166,25 +168,26 @@ const IndexPage = () => {
           <h1>MAKE A BOOKING!</h1>
           <div className="nav">
             <div 
-            // onClick={() => setFormStage(0)}
+            onClick={() => setFormStage(0)}
             className={formStage >= 0? "nav-item active" : "nav-item"}
             ><h2>YOUR DETAILS</h2></div>
             <div 
-            // onClick={() => setFormStage(1)}
+            onClick={() => setFormStage(1)}
             className={formStage >= 1? "nav-item active" : "nav-item"}
             ><h2>LESSON TYPE</h2></div>
             <div 
-            // onClick={() => setFormStage(2)}
+            onClick={() => setFormStage(2)}
             className={formStage >= 2? "nav-item active" : "nav-item"}
             ><h2>BOOKING TIME</h2></div>
           </div>
           <div className="forms-wrapper">
             <div className={formStage === 0? "forms-track" : formStage === 1? "forms-track active1" : formStage === 2? "forms-track active2" : "forms-track active3"}>
-              <ContactForm1 setFormStage={setFormStage} name={name} phone={phone} email={email} setName={setName} setEmail={setEmail} setPhone={setPhone}/>
-              <ContactForm2 setFormStage={setFormStage} name={name} phone={phone} email={email}
+              <ContactForm1 setFormStage={setFormStage} name={name} phone={phone} email={email} adults={adults} youth={youth} setName={setName} setEmail={setEmail} setPhone={setPhone} setAdults={setAdults} setYouth={setYouth}/>
+              <ContactForm2 setFormStage={setFormStage} name={name} phone={phone} email={email} adults={adults} youth={youth}
               lessonString={lessonString} setLessonString={setLessonString} gearString={gearString} setGearString={setGearString} hourString={hourString} setHourString={setHourString} bikeString={bikeString} setBikeString={setBikeString} totalPrice={totalPrice} setTotalPrice={setTotalPrice}
               />
-              <ContactForm3 setFormStage={setFormStage} timesAvailable={timesAvailable} name={name} phone={phone} email={email} 
+              <ContactForm3 setFormStage={setFormStage} timesAvailable={timesAvailable} name={name} phone={phone} email={email} adults={adults} youth={youth}
+              datesUnavailable={datesUnavailable}
               lessonString={lessonString} gearString={gearString} hourString={hourString} bikeString={bikeString} totalPrice={totalPrice}
               />
             </div>

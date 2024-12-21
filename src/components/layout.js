@@ -24,7 +24,7 @@ export default function Layout({children, dark, home}){
   const [scrollPosition, setScrollPosition] = useState()
   const main = useRef();
   const smoother = useRef();
-  console.log("hello hello", dark)
+  // console.log("hello hello", dark)
 
   useGSAP(
     () => {

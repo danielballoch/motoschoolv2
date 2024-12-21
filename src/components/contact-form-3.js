@@ -157,12 +157,14 @@ function isWithinRange(date, range) {
 function isWithinRanges(date, ranges) {
     return ranges.some(range => isWithinRange(date, range));
 }
-let in3Days = new Date(2023, 11, 28);
-let in5Days = new Date(2023, 11, 28);
-let in13Days = new Date(2023, 11, 26);
-let in15Days = new Date(2023, 11, 26);
+let in3Days = new Date(2024, 12, 28);
+let in5Days = new Date(2024, 12, 28);
+let in13Days = new Date(2024, 12, 26);
+let in15Days = new Date(2024, 12, 26);
 
-export default function ContactElectrical({setFormStage, timesAvailable, totalPrice, name, phone, email, lessonString, gearString, bikeString, hourString}){
+let testDays = new Date(2024, 12, 26);
+
+export default function ContactElectrical({datesUnavailable, setFormStage, timesAvailable, totalPrice, name, phone, email, adults, youth, lessonString, gearString, bikeString, hourString}){
 
     ///need to reformat dates here before adding to state, or do in useEffect
 
@@ -172,8 +174,24 @@ export default function ContactElectrical({setFormStage, timesAvailable, totalPr
     const [activeTime, setActiveTime] = useState(0)
     const [bookedDates, setBookedDates] = useState([ [in3Days, in5Days],[in13Days, in15Days],])
 
+    console.log("datesUnavailable: ", datesUnavailable)
+    console.log("booked", bookedDates)
+
+    useEffect(()=> {
+            let datesUnavailableRanges = []
+            for(let i = 0; i < datesUnavailable.length; i++){
+                let d = datesUnavailable[i].bookedDate.split("/")
+                //except here they need to be in the right format so I need to seperate and make it so it's like this: new Date(2023, 11, 26);
+                datesUnavailableRanges.push([new Date(Number(d[2]), Number(d[1])-1, Number(d[0])), new Date(Number(d[2]), Number(d[1])-1, Number(d[0]))])
+            }
+            setBookedDates(datesUnavailableRanges);
+    },[datesUnavailable])
+
+    console.log("booked", bookedDates)
 
     function tileDisabled({ date, view}) {
+        console.log("test", view)
+        console.log("test2", bookedDates)
         // Add class to tiles in month view only
         if (view === 'month') {
           // Check if a date React-Calendar wants to check is within any of the ranges
@@ -203,6 +221,8 @@ export default function ContactElectrical({setFormStage, timesAvailable, totalPr
             name: name,
             email: email,
             phone: phone,
+            adults: adults,
+            youth: youth,
             lesson: lessonString,
             date: reformattedDate,
             time: timesAvailable[activeTime].time,

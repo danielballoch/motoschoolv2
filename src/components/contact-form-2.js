@@ -98,7 +98,7 @@ form {
 
 
 
-export default function ContactElectrical({setFormStage, name, phone, email, lessonString, setLessonString, gearString, setGearString, bikeString, setBikeString, hourString, setHourString, totalPrice, setTotalPrice}){
+export default function ContactElectrical({setFormStage, name, phone, email, adults, youth, lessonString, setLessonString, gearString, setGearString, bikeString, setBikeString, hourString, setHourString, totalPrice, setTotalPrice}){
 
     ///need to reformat dates here before adding to state, or do in useEffect
 
@@ -164,6 +164,8 @@ export default function ContactElectrical({setFormStage, name, phone, email, les
             name: name,
             email: email,
             phone: phone,
+            adults: adults,
+            youth: youth,
             lesson: lessonString,
             gear: gearString,
             bike: bikeString,

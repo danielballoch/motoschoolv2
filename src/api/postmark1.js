@@ -38,7 +38,9 @@ export default async(req, res) => {
         "name": req.body.name,
         "email": req.body.email,
         "phone": req.body.phone,
-        "message": req.body.message
+        "message": req.body.message,
+        "youth": req.body.youth,
+        "adults": req.body.adults,
       },
       "MessageStream": "outbound"
     }

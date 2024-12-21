@@ -42,6 +42,8 @@ export default async(req, res) => {
         "name": req.body.name,
         "email": req.body.email,
         "phone": req.body.phone,
+        "youth": req.body.youth,
+        "adults": req.body.adults,
         "lesson": req.body.lesson,
         "option": option,
         "optionValue": optionValue,

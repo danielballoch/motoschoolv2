@@ -204,7 +204,7 @@ export default function Nav({smoother, dark, home}){
     // console.log("hello nav:", SContext, ShareContext)
     // if(window){ console.log("location: ", window.location.hash)}
    
-    console.log("smoothersdf",smoother)
+    // console.log("smoothersdf",smoother)
     const navref = useRef();
     const { contextSafe } = useGSAP({ scope: navref });
 
