@@ -2,7 +2,7 @@ import React, {useRef, useEffect, useState} from "react"
 import styled from "@emotion/styled"
 import { useForm } from "react-hook-form"
 import ReCAPTCHA from "react-google-recaptcha";
-import { navigate } from "gatsby";
+// import { navigate } from "gatsby";
 
 
 const FormDiv = styled.div`

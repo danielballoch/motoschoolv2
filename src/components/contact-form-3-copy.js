@@ -151,47 +151,33 @@ padding: 0;
 
 `
 
-// function isWithinRange(date, range) {
-//     console.log("isWithinRangeRunning", date, range)
-//     return isWithinInterval(date, { start: range[0], end: range[1] });
-// }
-// function isWithinRanges(date, ranges) {
-//     console.log("isWithinRangesRunning", date, ranges)
-//     return ranges.some(range => isWithinRange(date, range));
-// }
-// let in3Days = new Date(2024, 11, 28);
-// let in5Days = new Date(2024, 11, 28);
-// let in13Days = new Date(2024, 11, 30);
-// let in15Days = new Date(2024, 11, 31);
-
-// let testDays = new Date(2024, 12, 26);
-
 function isWithinRange(date, range) {
-    console.log("isWithinRangeRunning")
+    console.log("isWithinRangeRunning", date, range)
     return isWithinInterval(date, { start: range[0], end: range[1] });
 }
 function isWithinRanges(date, ranges) {
-    console.log("isWithinRangesRunning")
+    console.log("isWithinRangesRunning", date, ranges)
     return ranges.some(range => isWithinRange(date, range));
 }
-let in3Days = new Date(2025, 1, 28);
-let in5Days = new Date(2025, 1, 28);
-let in13Days = new Date(2025, 1, 26);
-let in15Days = new Date(2025, 1, 26);
+let in3Days = new Date(2024, 11, 28);
+let in5Days = new Date(2024, 11, 28);
+let in13Days = new Date(2024, 11, 30);
+let in15Days = new Date(2024, 11, 31);
+
+let testDays = new Date(2024, 12, 26);
 
 export default function ContactElectrical({datesUnavailable, setFormStage, timesAvailable, totalPrice, name, phone, email, adults, youth, lessonString, gearString, bikeString, hourString}){
 
     ///need to reformat dates here before adding to state, or do in useEffect
 
     const reRef = useRef();
-    const [selectedDate, updateSelectedDate] = useState(new Date());
     const [serverState, setServerState] = useState({formSent: false});
+    const [selectedDate, updateSelectedDate] = useState(new Date());
     const [activeTime, setActiveTime] = useState(0)
     const [bookedDates, setBookedDates] = useState([ [in3Days, in5Days],[in13Days, in15Days],])
-    // const [bookedDates, setBookedDates] = useState([ [in3Days, in5Days],[in13Days, in15Days],])
 
     console.log("datesUnavailable: ", datesUnavailable)
-    // console.log("booked", bookedDates)
+    console.log("booked", bookedDates)
 
     useEffect(()=> {
         console.log("dates Unavailable running")
@@ -204,28 +190,20 @@ export default function ContactElectrical({datesUnavailable, setFormStage, times
             setBookedDates(datesUnavailableRanges);
     },[datesUnavailable])
 
-    // console.log("booked", bookedDates)
-    console.log("tile", tileDisabled({date: in3Days, view: "month"}))
-
-    // function tileDisabled({ date, view}) {
-    //     console.log("test", view)
-    //     console.log("date", date)
-    //     console.log("test2", bookedDates)
-    //     // Add class to tiles in month view only
-    //     if (view === 'month') {
-    //       // Check if a date React-Calendar wants to check is within any of the ranges
-    //       console.log("test3", isWithinRanges(date, bookedDates))
-    //       return isWithinRanges(date, bookedDates);
-    //     }
-    // }
+    console.log("booked", bookedDates)
+    console.log("tile", tileDisabled({date: new Date(2024, 11, 30), view: "month"}))
 
     function tileDisabled({ date, view}) {
+        console.log("test", view)
+        console.log("date", date)
+        console.log("test2", bookedDates)
         // Add class to tiles in month view only
         if (view === 'month') {
           // Check if a date React-Calendar wants to check is within any of the ranges
+          console.log("test3", isWithinRanges(date, bookedDates))
           return isWithinRanges(date, bookedDates);
         }
-      }
+    }
 
 
     const {
@@ -289,15 +267,14 @@ export default function ContactElectrical({datesUnavailable, setFormStage, times
                     size="invisible"
                     ref={reRef} 
                 />
-                 <form 
-                 onSubmit={handleSubmit(onSubmit)} 
-                 autocomplete="on">
+                 <form onSubmit={handleSubmit(onSubmit)} autocomplete="on">
 
           
                     <label htmlFor="email">BOOKING PERIOD:</label>
-                    <DatePicker tileDisabled={tileDisabled} onChange={updateSelectedDate} value={selectedDate}  minDate={new Date(2025, 1, 9)} format="dd-MM-y"/>
-                    {/* <DatePicker view="decade" tileDisabled={({ activeStartDate, date, view }) => date.getDay() === 0} /> */}
-
+                    <DatePicker onChange={updateSelectedDate} value={selectedDate}
+                     tileDisabled={tileDisabled} 
+                     minDate={new Date()} format="dd-MM-y"/>
+                    
                     <label>TIME SELECTION:</label>
                     <div className="time-selection">
                         {timesAvailable.map((time, i)=>(
