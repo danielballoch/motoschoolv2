@@ -4,9 +4,12 @@ import { useForm } from "react-hook-form"
 import ReCAPTCHA from "react-google-recaptcha";
 import { navigate } from "gatsby";
 import { isWithinInterval } from "date-fns";
-import DatePicker from 'react-date-picker'
-import 'react-date-picker/dist/DatePicker.css';
-import 'react-calendar/dist/Calendar.css';
+// import DatePicker from 'react-date-picker'
+// import 'react-date-picker/dist/DatePicker.css';
+// import 'react-calendar/dist/Calendar.css';
+// import {Button, Calendar, CalendarCell, CalendarGrid, DateInput, DatePicker, DateSegment, Dialog, Group, Heading, Label, Popover} from 'react-aria-components';
+
+import DatePicker from "../components/datePicker"
 
 const FormDiv = styled.div`
 width: 694px;
@@ -15,6 +18,8 @@ box-sizing: border-box;
 display: flex;
 justify-content: center;
 align-items: center;
+
+
 form {
     // padding: 50px;
     width: 694px;
@@ -193,6 +198,10 @@ export default function ContactElectrical({datesUnavailable, setFormStage, times
     console.log("datesUnavailable: ", datesUnavailable)
     // console.log("booked", bookedDates)
 
+    useEffect(() => {
+        console.log("update selected date: ", selectedDate)
+    },[selectedDate])
+
     useEffect(()=> {
         console.log("dates Unavailable running")
             let datesUnavailableRanges = []
@@ -295,8 +304,33 @@ export default function ContactElectrical({datesUnavailable, setFormStage, times
 
           
                     <label htmlFor="email">BOOKING PERIOD:</label>
-                    <DatePicker tileDisabled={tileDisabled} onChange={updateSelectedDate} value={selectedDate}  minDate={new Date(2025, 1, 9)} format="dd-MM-y"/>
-                    {/* <DatePicker view="decade" tileDisabled={({ activeStartDate, date, view }) => date.getDay() === 0} /> */}
+                    <DatePicker datesUnavailable={datesUnavailable} selectedDate={selectedDate} updateSelectedDate={updateSelectedDate}/>
+                    {/* <DatePicker >
+                        <Group>
+                            <DateInput>
+                            {(segment) => <DateSegment segment={segment} />}
+                            </DateInput>
+                            <Button>▼</Button>
+                        </Group>
+                        <Popover>
+                            <Dialog>
+                            <Calendar >
+                                <header>
+                                <Button slot="previous">◀</Button>
+                                <Heading />
+                                <Button slot="next">▶</Button>
+                                </header>
+                                <CalendarGrid>
+                                {(date) => <CalendarCell date={date} />}
+                                </CalendarGrid>
+                            </Calendar>
+                            </Dialog>
+                        </Popover>
+                    </DatePicker> */}
+
+                    {/* <DatePicker tileDisabled={tileDisabled} onChange={updateSelectedDate} value={selectedDate}  minDate={new Date(2025, 1, 9)} format="dd-MM-y"/> */}
+                    
+                    {/* <DatePicker tileDisabled={({ activeStartDate, date, view }) => date.getDay() === 0} /> */}
 
                     <label>TIME SELECTION:</label>
                     <div className="time-selection">

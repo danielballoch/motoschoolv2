@@ -20,18 +20,18 @@ return data.success;
 
 function getStripeLink(data){ 
 let LS1 = "30 minute lesson - $80"
-let LS2 = "1 hour lesson - $80"
+let LS2 = "1 hour lesson - $145"
 let LS3 = "Coaching only - $100 p/h"
 
-let GS1 = "1 set - (included)"
-let GS2 = "2 sets - $15"
-let GS3 = "3 sets - $30"
-let GS4 = "4 sets - $45"
+let GS1 = "1 Set - (included)"
+let GS2 = "2 Sets - $15"
+let GS3 = "3 Sets - $30"
+let GS4 = "4 Sets - $45"
 
-let BS1 = "1 bike - (included)"
-let BS2 = "2 bikes - $45"
-let BS3 = "3 bikes - $90"
-let BS4 = "4 bikes - $135"
+let BS1 = "1 Bike - (included)"
+let BS2 = "2 Bikes - $45"
+let BS3 = "3 Bikes - $90"
+let BS4 = "4 Bikes - $135"
 
 let HS1 = "1 Hour"
 let HS2 = "2 Hours"
@@ -109,10 +109,12 @@ export default async(req, res) => {
       return;
   }
 
-  let stripeLink = getStripeLink(req)
-  console.log(stripeLink)
+ 
 
   try {
+    let stripeLink = getStripeLink(req)
+    // console.log(data.body.lesson, data.body.hours, data.body.bike)
+    console.log("stripe link: ", stripeLink)
     let option = "No options selected"
     let optionValue = ""
     if (req.body.lesson === "Coaching only - $100 p/h"){option = "Lesson Hours: "; optionValue = req.body.hours} else {option = "Rental Bikes & Gear: "; optionValue = req.body.bike + ", " + req.body.gear}

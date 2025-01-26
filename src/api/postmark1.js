@@ -32,6 +32,7 @@ export default async(req, res) => {
     let message = {
       "From": "info@motoschool.co.nz",
       "To": "philsmotoschool@outlook.com",
+      // "To": "daniel@thoughtfulhq.com",
       "ReplyTo": "philsmotoschool@outlook.com",
       "TemplateId" : 36706722,
       "TemplateModel": {

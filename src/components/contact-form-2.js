@@ -106,7 +106,7 @@ export default function ContactElectrical({setFormStage, name, phone, email, adu
     const [serverState, setServerState] = useState({formSent: false});
     const [lessonPrice, setLessonPrice] = useState(80)
     const [gearPrice, setGearPrice] = useState(0)
-    const [bikeCost, setBikeCost] = useState(0)
+    const [bikePrice, setBikePrice] = useState(0)
     const [hourCost, setHourCost] = useState(0)
     // const [totalPrice, setTotalPrice] = useState(80)
 
@@ -118,33 +118,39 @@ export default function ContactElectrical({setFormStage, name, phone, email, adu
 
 
     let LS1 = "30 minute lesson - $80"
-    let LS2 = "1 hour lesson - $80"
+    let LS2 = "1 hour lesson - $145"
     let LS3 = "Coaching only - $100 p/h"
     
-    let GS1 = "1 set - (included)"
-    let GS2 = "2 sets - $15"
-    let GS3 = "3 sets - $30"
-    let GS4 = "4 sets - $45"
+    let GS1 = "1 Set - (included)"
+    let GS2 = "2 Sets - $15"
+    let GS3 = "3 Sets - $30"
+    let GS4 = "4 Sets - $45"
 
-    let BS1 = "1 bike - (included)"
-    let BS2 = "2 bikes - $45"
-    let BS3 = "3 bikes - $90"
-    let BS4 = "4 bikes - $135"
+    let BS1 = "1 Bike - (included)"
+    let BS2 = "2 Bikes - $45"
+    let BS3 = "3 Bikes - $90"
+    let BS4 = "4 Bikes - $135"
 
     let HS1 = "1 Hour"
     let HS2 = "2 Hours"
     let HS3 = "3 Hours"
 
 
+    // <option value="0">1 Bike - (included)</option>
+    //                             <option value="45" >2 Bikes - $45</option>
+    //                             <option value="90" >3 Bikes - $90</option>
+    //                             <option value="135" >4 Bikes - $135</option>
+
     useEffect(() => {
+        console.log("Prices:", lessonPrice, gearPrice, bikePrice, hourCost)
         //calculate total price
-        if (lessonPrice === 100){setTotalPrice(lessonPrice + hourCost)} else {setTotalPrice(lessonPrice + gearPrice + bikeCost + hourCost)}
+        if (lessonPrice === 100){setTotalPrice(lessonPrice + hourCost)} else {setTotalPrice(lessonPrice + gearPrice + bikePrice + hourCost)}
         //set string values for forms
+        if(bikePrice === 0 && bikeString !== BS1){setBikeString(BS1)} else if(bikePrice === 45 && bikeString !== BS2){setBikeString(BS2)} else if(bikePrice === 90 && bikeString !== BS3){setBikeString(BS3)} else if(bikePrice === 135 && bikeString !== BS4){setBikeString(BS4)}
         if(lessonPrice === 80 && lessonString !== LS1){setLessonString(LS1)} else if(lessonPrice === 145 && lessonString !== LS2){setLessonString(LS2)} else if(lessonPrice === 100 && lessonString !== LS3){setLessonString(LS3)} 
         if(gearPrice === 0 && gearString !== GS1){setGearString(GS1)} else if(gearPrice === 15 && gearString !== GS2){setGearString(GS2)} else if(gearPrice === 30 && gearString !== GS3){setGearString(GS3)} else if(gearPrice === 45 && gearString !== GS4){setGearString(GS4)} 
-        if(bikeCost === 0 && bikeString !== BS1){setBikeString(BS1)} else if(bikeCost === 45 && bikeString !== BS2){setBikeString(BS2)} else if(bikeCost === 90 && bikeString !== BS3){setBikeString(BS3)} else if(bikeCost === 135 && bikeString !== BS4){setBikeString(BS4)}
         if(hourCost === 0 && hourString !== HS1){setHourString(HS1)} else if(hourCost === 100 && hourString !== HS2){setHourString(HS2)} else if(hourCost === 200 && hourString !== HS3){setHourString(HS3)} 
-    },[lessonPrice, gearPrice, bikeCost, hourCost])
+    },[lessonPrice, gearPrice, bikePrice, hourCost])
 
 
     const {
@@ -244,12 +250,12 @@ export default function ContactElectrical({setFormStage, name, phone, email, adu
                                 name="bike" 
                                 required
                                 {...register("Bike", { required: true})}
-                                onChange={(e) => setBikeCost(Number(e.target.value))}
+                                onChange={(e) => setBikePrice(Number(e.target.value))}
                             >
-                                <option value="0">1 bike - (included)</option>
-                                <option value="45" >2 bikes - $45</option>
-                                <option value="90" >3 bikes - $90</option>
-                                <option value="135" >4 bikes - $135</option>
+                                <option value="0">1 Bike - (included)</option>
+                                <option value="45" >2 Bikes - $45</option>
+                                <option value="90" >3 Bikes - $90</option>
+                                <option value="135" >4 Bikes - $135</option>
                             </select> 
                             </div>
                     : 
