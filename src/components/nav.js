@@ -303,7 +303,7 @@ export default function Nav({smoother, dark, home}){
                 <Link to="/" onClick={() => {onClickGood()}}>Tracks</Link>
                 <Link to="/" onClick={() => {onClickGood()}}>Pricing</Link>
                 <Link to="/frequently-asked-questions" onClick={() => onClickGood()}>FAQ</Link>
-                <Link to="/contact" onClick={() => onClickGood()}>Book Now</Link>
+                <Link to="/booking" onClick={() => onClickGood()}>Book Now</Link>
                 <a className="email" href="mailto:philsmotoschool@outlook.com">philsmotoschool@outlook.com</a>
                 <a className="phone" href="tel:+64277381275">Call +64 27 738 1275</a>
             </div>
